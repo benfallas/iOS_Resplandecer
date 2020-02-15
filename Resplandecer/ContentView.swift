@@ -9,8 +9,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var menuOpen: Bool = false
     var body: some View {
-        Text("Hello, Resplandecer!")
+        NavigationView {
+            ZStack {
+                VStack {
+                    
+                    
+                    
+                    Text("Hello, Resplandecer!")
+                }
+                SideMenu(width: 270,
+                         isOpen: self.menuOpen,
+                         menuClose: self.openMenu)
+                
+            }.navigationBarTitle("")
+                //*************************Menu Icon******************************
+                .navigationBarItems(leading:
+                    Button(action:
+                        {
+                            self.openMenu()
+                            print("menu button pressed!")
+                        }, label: {
+                            Image("barIcon")
+                            .renderingMode(Image.TemplateRenderingMode?.init(Image
+                            .TemplateRenderingMode.original))
+                            .resizable().frame(width:35, height:35)
+                        }
+                    )
+                )
+        }
+    }
+    func openMenu() {
+        self.menuOpen.toggle()
     }
 }
 
