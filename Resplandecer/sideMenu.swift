@@ -15,23 +15,6 @@ struct MenuContent: View {
             Text("Leaderboard")
             Text("Leaderboard")
             Text("Leaderboard")
-            
-//            NavigationLink(destination: leaderboard())
-//            {
-//                Text("Leaderboard")
-//            }
-//            NavigationLink(destination: userStats())
-//            {
-//                Text("User Stats")
-//            }
-//            NavigationLink(destination: createGroup())
-//            {
-//                Text("Create Group")
-//            }
-//            NavigationLink(destination: settings())
-//            {
-//                Text("Settings")
-//            }
         }
     }
 }
