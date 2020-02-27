@@ -49,7 +49,7 @@ struct SideMenu: View {
     }
 }
 
-struct sideMenu: View {
+struct SideMenuView: View {
     @State var menuOpen: Bool = false
     
     var body: some View {
@@ -76,8 +76,8 @@ struct sideMenu: View {
 
 
 
-struct sideMenu_Previews: PreviewProvider {
+struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        sideMenu()
+        SideMenuView()
     }
 }
