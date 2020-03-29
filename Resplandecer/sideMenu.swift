@@ -88,6 +88,7 @@ struct sideMenu: View {
     func openMenu() {
         self.menuOpen.toggle()
     }
+    
 }
 
 

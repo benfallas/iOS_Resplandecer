@@ -10,19 +10,34 @@ import SwiftUI
 
 struct ContentView: View {
     @State var menuOpen: Bool = false
+    
     var body: some View {
         NavigationView {
             ZStack {
-                VStack {
-                    
-                    
-                    
-                    Text("Hello, Resplandecer!")
-                }
+                
+                RecordList()
+                
+//                VStack {
+//
+//                    Text("¿Quiénes Somos?")
+////                    Text(who)
+//
+//                    Text("¿PREGUNTAS?")
+////                    Text(quest)
+//
+//                    Text("Correo Electronico")
+////                    Text(email)
+//
+//                    Text("Local")
+////                    Text(address)
+//
+//                    Text("Daniel 12:3")
+////                    Text(verse)
+//                }
                 SideMenu(width: 270,
                          isOpen: self.menuOpen,
                          menuClose: self.openMenu)
-                
+
             }.navigationBarTitle("")
                 //*************************Menu Icon******************************
                 .navigationBarItems(leading:

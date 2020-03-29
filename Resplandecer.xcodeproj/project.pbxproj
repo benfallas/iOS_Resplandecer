@@ -15,6 +15,8 @@
 		D1364DBB23F875F100C43CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1364DB923F875F100C43CAA /* LaunchScreen.storyboard */; };
 		D1364DC323F87CD200C43CAA /* sideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DC223F87CD200C43CAA /* sideMenu.swift */; };
 		D1364DC523F882C000C43CAA /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DC423F882C000C43CAA /* Playlist.swift */; };
+		D1A14D71241ECE54006960F0 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A14D70241ECE54006960F0 /* Record.swift */; };
+		D1A14D73241ED025006960F0 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A14D72241ED025006960F0 /* RecordList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		D1364DBC23F875F100C43CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1364DC223F87CD200C43CAA /* sideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sideMenu.swift; sourceTree = "<group>"; };
 		D1364DC423F882C000C43CAA /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		D1A14D70241ECE54006960F0 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		D1A14D72241ED025006960F0 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				D1364DB923F875F100C43CAA /* LaunchScreen.storyboard */,
 				D1364DBC23F875F100C43CAA /* Info.plist */,
 				D1364DB623F875F100C43CAA /* Preview Content */,
+				D1A14D70241ECE54006960F0 /* Record.swift */,
+				D1A14D72241ED025006960F0 /* RecordList.swift */,
 			);
 			path = Resplandecer;
 			sourceTree = "<group>";
@@ -154,9 +160,11 @@
 			files = (
 				D1364DAF23F875E300C43CAA /* AppDelegate.swift in Sources */,
 				D1364DB123F875E300C43CAA /* SceneDelegate.swift in Sources */,
+				D1A14D71241ECE54006960F0 /* Record.swift in Sources */,
 				D1364DB323F875E300C43CAA /* ContentView.swift in Sources */,
 				D1364DC323F87CD200C43CAA /* sideMenu.swift in Sources */,
 				D1364DC523F882C000C43CAA /* Playlist.swift in Sources */,
+				D1A14D73241ED025006960F0 /* RecordList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
