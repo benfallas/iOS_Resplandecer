@@ -7,19 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABE8D5B35ED39430972F2856 /* Pods_Resplandecer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */; };
+		C14DC85E24084B7900183521 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C14DC85D24084B7900183521 /* GoogleService-Info.plist */; };
 		D1364DAF23F875E300C43CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DAE23F875E300C43CAA /* AppDelegate.swift */; };
 		D1364DB123F875E300C43CAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DB023F875E300C43CAA /* SceneDelegate.swift */; };
 		D1364DB323F875E300C43CAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DB223F875E300C43CAA /* ContentView.swift */; };
 		D1364DB523F875F100C43CAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1364DB423F875F100C43CAA /* Assets.xcassets */; };
 		D1364DB823F875F100C43CAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1364DB723F875F100C43CAA /* Preview Assets.xcassets */; };
 		D1364DBB23F875F100C43CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1364DB923F875F100C43CAA /* LaunchScreen.storyboard */; };
-		D1364DC323F87CD200C43CAA /* sideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DC223F87CD200C43CAA /* sideMenu.swift */; };
+		D1364DC323F87CD200C43CAA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DC223F87CD200C43CAA /* MenuView.swift */; };
 		D1364DC523F882C000C43CAA /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DC423F882C000C43CAA /* Playlist.swift */; };
 		D1A14D71241ECE54006960F0 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A14D70241ECE54006960F0 /* Record.swift */; };
 		D1A14D73241ED025006960F0 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A14D72241ED025006960F0 /* RecordList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52F212AC66C08733BD2928D9 /* Pods-Resplandecer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.release.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.release.xcconfig"; sourceTree = "<group>"; };
+		A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Resplandecer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14DC85D24084B7900183521 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1364DAB23F875E300C43CAA /* Resplandecer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resplandecer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1364DAE23F875E300C43CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1364DB023F875E300C43CAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +33,7 @@
 		D1364DB723F875F100C43CAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D1364DBA23F875F100C43CAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1364DBC23F875F100C43CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1364DC223F87CD200C43CAA /* sideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sideMenu.swift; sourceTree = "<group>"; };
+		D1364DC223F87CD200C43CAA /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D1364DC423F882C000C43CAA /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		D1A14D70241ECE54006960F0 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		D1A14D72241ED025006960F0 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
@@ -39,17 +44,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE8D5B35ED39430972F2856 /* Pods_Resplandecer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		064B4789237F084C5592441A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D147A11CA79A0E314BC49CC5 /* Pods-Resplandecer.debug.xcconfig */,
+				52F212AC66C08733BD2928D9 /* Pods-Resplandecer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7BF220FA72325465721606A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D1364DA223F875E200C43CAA = {
 			isa = PBXGroup;
 			children = (
 				D1364DAD23F875E300C43CAA /* Resplandecer */,
 				D1364DAC23F875E300C43CAA /* Products */,
+				064B4789237F084C5592441A /* Pods */,
+				7BF220FA72325465721606A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,9 +94,10 @@
 				D1364DB023F875E300C43CAA /* SceneDelegate.swift */,
 				D1364DB223F875E300C43CAA /* ContentView.swift */,
 				D1364DC423F882C000C43CAA /* Playlist.swift */,
-				D1364DC223F87CD200C43CAA /* sideMenu.swift */,
+				D1364DC223F87CD200C43CAA /* MenuView.swift */,
 				D1364DB423F875F100C43CAA /* Assets.xcassets */,
 				D1364DB923F875F100C43CAA /* LaunchScreen.storyboard */,
+				C14DC85D24084B7900183521 /* GoogleService-Info.plist */,
 				D1364DBC23F875F100C43CAA /* Info.plist */,
 				D1364DB623F875F100C43CAA /* Preview Content */,
 				D1A14D70241ECE54006960F0 /* Record.swift */,
@@ -94,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1364DBF23F875F100C43CAA /* Build configuration list for PBXNativeTarget "Resplandecer" */;
 			buildPhases = (
+				4F5F7A47105EBD66D2D1BAE4 /* [CP] Check Pods Manifest.lock */,
 				D1364DA723F875E300C43CAA /* Sources */,
 				D1364DA823F875E300C43CAA /* Frameworks */,
 				D1364DA923F875E300C43CAA /* Resources */,
+				ECBE0DD2FC4A2ED3F0286295 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,12 +175,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1364DBB23F875F100C43CAA /* LaunchScreen.storyboard in Resources */,
+				C14DC85E24084B7900183521 /* GoogleService-Info.plist in Resources */,
 				D1364DB823F875F100C43CAA /* Preview Assets.xcassets in Resources */,
 				D1364DB523F875F100C43CAA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F5F7A47105EBD66D2D1BAE4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Resplandecer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECBE0DD2FC4A2ED3F0286295 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Resplandecer/Pods-Resplandecer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Resplandecer/Pods-Resplandecer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Resplandecer/Pods-Resplandecer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1364DA723F875E300C43CAA /* Sources */ = {
@@ -162,7 +234,7 @@
 				D1364DB123F875E300C43CAA /* SceneDelegate.swift in Sources */,
 				D1A14D71241ECE54006960F0 /* Record.swift in Sources */,
 				D1364DB323F875E300C43CAA /* ContentView.swift in Sources */,
-				D1364DC323F87CD200C43CAA /* sideMenu.swift in Sources */,
+				D1364DC323F87CD200C43CAA /* MenuView.swift in Sources */,
 				D1364DC523F882C000C43CAA /* Playlist.swift in Sources */,
 				D1A14D73241ED025006960F0 /* RecordList.swift in Sources */,
 			);
@@ -298,6 +370,7 @@
 		};
 		D1364DC023F875F100C43CAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D147A11CA79A0E314BC49CC5 /* Pods-Resplandecer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -317,6 +390,7 @@
 		};
 		D1364DC123F875F100C43CAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F212AC66C08733BD2928D9 /* Pods-Resplandecer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
