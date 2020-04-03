@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ABE8D5B35ED39430972F2856 /* Pods_Resplandecer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */; };
 		C14DC85E24084B7900183521 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C14DC85D24084B7900183521 /* GoogleService-Info.plist */; };
+		93CFD02F2408492D0010CDE4 /* AudioSimplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CFD02E2408492D0010CDE4 /* AudioSimplePlayer.swift */; };
 		D1364DAF23F875E300C43CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DAE23F875E300C43CAA /* AppDelegate.swift */; };
 		D1364DB123F875E300C43CAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DB023F875E300C43CAA /* SceneDelegate.swift */; };
 		D1364DB323F875E300C43CAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DB223F875E300C43CAA /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 		52F212AC66C08733BD2928D9 /* Pods-Resplandecer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.release.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.release.xcconfig"; sourceTree = "<group>"; };
 		A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Resplandecer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14DC85D24084B7900183521 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93CFD02E2408492D0010CDE4 /* AudioSimplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSimplePlayer.swift; sourceTree = "<group>"; };
 		D1364DAB23F875E300C43CAA /* Resplandecer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resplandecer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1364DAE23F875E300C43CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1364DB023F875E300C43CAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				D1364DB623F875F100C43CAA /* Preview Content */,
 				D1A14D70241ECE54006960F0 /* Record.swift */,
 				D1A14D72241ED025006960F0 /* RecordList.swift */,
+				93CFD02E2408492D0010CDE4 /* AudioSimplePlayer.swift */,
 			);
 			path = Resplandecer;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1364DAF23F875E300C43CAA /* AppDelegate.swift in Sources */,
+				93CFD02F2408492D0010CDE4 /* AudioSimplePlayer.swift in Sources */,
 				D1364DB123F875E300C43CAA /* SceneDelegate.swift in Sources */,
 				D1A14D71241ECE54006960F0 /* Record.swift in Sources */,
 				D1364DB323F875E300C43CAA /* ContentView.swift in Sources */,
