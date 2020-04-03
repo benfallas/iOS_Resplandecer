@@ -17,6 +17,8 @@
 		D1364DBB23F875F100C43CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1364DB923F875F100C43CAA /* LaunchScreen.storyboard */; };
 		D1364DC323F87CD200C43CAA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DC223F87CD200C43CAA /* MenuView.swift */; };
 		D1364DC523F882C000C43CAA /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DC423F882C000C43CAA /* Playlist.swift */; };
+		D1A14D71241ECE54006960F0 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A14D70241ECE54006960F0 /* Record.swift */; };
+		D1A14D73241ED025006960F0 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A14D72241ED025006960F0 /* RecordList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +35,10 @@
 		D1364DBC23F875F100C43CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1364DC223F87CD200C43CAA /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D1364DC423F882C000C43CAA /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		D1A14D70241ECE54006960F0 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		D1A14D72241ED025006960F0 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
 		D147A11CA79A0E314BC49CC5 /* Pods-Resplandecer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.debug.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.debug.xcconfig"; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,8 @@
 				C14DC85D24084B7900183521 /* GoogleService-Info.plist */,
 				D1364DBC23F875F100C43CAA /* Info.plist */,
 				D1364DB623F875F100C43CAA /* Preview Content */,
+				D1A14D70241ECE54006960F0 /* Record.swift */,
+				D1A14D72241ED025006960F0 /* RecordList.swift */,
 			);
 			path = Resplandecer;
 			sourceTree = "<group>";
@@ -227,9 +234,11 @@
 			files = (
 				D1364DAF23F875E300C43CAA /* AppDelegate.swift in Sources */,
 				D1364DB123F875E300C43CAA /* SceneDelegate.swift in Sources */,
+				D1A14D71241ECE54006960F0 /* Record.swift in Sources */,
 				D1364DB323F875E300C43CAA /* ContentView.swift in Sources */,
 				D1364DC323F87CD200C43CAA /* MenuView.swift in Sources */,
 				D1364DC523F882C000C43CAA /* Playlist.swift in Sources */,
+				D1A14D73241ED025006960F0 /* RecordList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
