@@ -71,7 +71,6 @@ struct SideMenuView: View {
     func openMenu() {
         self.menuOpen.toggle()
     }
-    
 }
 
 
