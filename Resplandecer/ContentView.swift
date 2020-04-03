@@ -21,7 +21,7 @@ struct ContentView: View {
 
                     Text("Hello, Resplandecer!")
                 }
-                SideMenu(width: 270,
+                SideMenu(width: 270,g
                          isOpen: self.menuOpen,
                          menuClose: self.openMenu)
                          
