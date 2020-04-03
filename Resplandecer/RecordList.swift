@@ -7,8 +7,10 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct RecordList: View {
+    
     @State var recList = [
         Record(id: UUID(), title: String("A Solas Con el Maestro"), author: "Pastor Arturo Rios", radioURL: "link1", playImage: Image("redplay")),
         Record(id: UUID(), title: "Apreciar la Palabra de Dios", author: "Pastor Arturo Rios", radioURL: "link2", playImage: Image("redplay")),
@@ -26,6 +28,18 @@ struct RecordList: View {
             
         }
     }
+    
+//    func getRecordList(playlist: String) {
+//        var ref: DatabaseReference!
+//        var recordList: [String: AnyObject]
+//
+//        ref.child("DeclaracionAlDia").observe(DataEventType.value, with: { (SnapshotMetadata) in
+//            recordList = SnapshotMetadata.value as! [String : AnyObject]
+//        })
+//
+//        print(recordList)
+//    }
+    
 }
 
 struct RecordList_Previews: PreviewProvider {
