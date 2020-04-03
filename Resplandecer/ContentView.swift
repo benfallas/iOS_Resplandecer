@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+let player = AudioSimplePlayer()
+
 struct ContentView: View {
     @State var menuOpen: Bool = false
     var body: some View {
@@ -30,6 +32,7 @@ struct ContentView: View {
                         {
                             self.openMenu()
                             print("menu button pressed!")
+                            player.signalPlay(ID: "id1")
                         }, label: {
                             Image("barIcon")
                             .renderingMode(Image.TemplateRenderingMode?.init(Image
