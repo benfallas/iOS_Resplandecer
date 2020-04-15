@@ -39,7 +39,10 @@ class AudioSimplePlayer {
     }
     
     class func playNext() {
+        // automatically playing next song in the playlist
         
+        // update the current song -> stop
+        // update the next song -> play
     }
     
     func signalPlay(ID: String) {

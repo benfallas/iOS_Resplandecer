@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ABE8D5B35ED39430972F2856 /* Pods_Resplandecer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */; };
-		C14DC85E24084B7900183521 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C14DC85D24084B7900183521 /* GoogleService-Info.plist */; };
+		18E8681F7175B75A2C06BC42 /* Pods_Resplandecer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A164A09105E41966EBC1D53B /* Pods_Resplandecer.framework */; };
 		93CFD02F2408492D0010CDE4 /* AudioSimplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CFD02E2408492D0010CDE4 /* AudioSimplePlayer.swift */; };
+		C14DC85E24084B7900183521 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C14DC85D24084B7900183521 /* GoogleService-Info.plist */; };
 		D1364DAF23F875E300C43CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DAE23F875E300C43CAA /* AppDelegate.swift */; };
 		D1364DB123F875E300C43CAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DB023F875E300C43CAA /* SceneDelegate.swift */; };
 		D1364DB323F875E300C43CAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DB223F875E300C43CAA /* ContentView.swift */; };
@@ -23,10 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		52F212AC66C08733BD2928D9 /* Pods-Resplandecer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.release.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.release.xcconfig"; sourceTree = "<group>"; };
-		A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Resplandecer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C14DC85D24084B7900183521 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E8BBF29C35996C012150D32 /* Pods-Resplandecer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.release.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.release.xcconfig"; sourceTree = "<group>"; };
 		93CFD02E2408492D0010CDE4 /* AudioSimplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSimplePlayer.swift; sourceTree = "<group>"; };
+		A164A09105E41966EBC1D53B /* Pods_Resplandecer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Resplandecer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14DC85D24084B7900183521 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1364DAB23F875E300C43CAA /* Resplandecer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resplandecer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1364DAE23F875E300C43CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1364DB023F875E300C43CAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,8 +39,7 @@
 		D1364DC423F882C000C43CAA /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		D1A14D70241ECE54006960F0 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		D1A14D72241ED025006960F0 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
-		D147A11CA79A0E314BC49CC5 /* Pods-Resplandecer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.debug.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.debug.xcconfig"; sourceTree = "<group>"; };
-
+		E26F4843CB827E7635F5D2F0 /* Pods-Resplandecer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.debug.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,27 +47,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABE8D5B35ED39430972F2856 /* Pods_Resplandecer.framework in Frameworks */,
+				18E8681F7175B75A2C06BC42 /* Pods_Resplandecer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		064B4789237F084C5592441A /* Pods */ = {
+		47F4FE7851F4B41DD8F14C31 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D147A11CA79A0E314BC49CC5 /* Pods-Resplandecer.debug.xcconfig */,
-				52F212AC66C08733BD2928D9 /* Pods-Resplandecer.release.xcconfig */,
+				E26F4843CB827E7635F5D2F0 /* Pods-Resplandecer.debug.xcconfig */,
+				3E8BBF29C35996C012150D32 /* Pods-Resplandecer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		7BF220FA72325465721606A8 /* Frameworks */ = {
+		64DFF4E75857CB84462B2447 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */,
+				A164A09105E41966EBC1D53B /* Pods_Resplandecer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,8 +76,8 @@
 			children = (
 				D1364DAD23F875E300C43CAA /* Resplandecer */,
 				D1364DAC23F875E300C43CAA /* Products */,
-				064B4789237F084C5592441A /* Pods */,
-				7BF220FA72325465721606A8 /* Frameworks */,
+				47F4FE7851F4B41DD8F14C31 /* Pods */,
+				64DFF4E75857CB84462B2447 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,11 +124,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1364DBF23F875F100C43CAA /* Build configuration list for PBXNativeTarget "Resplandecer" */;
 			buildPhases = (
-				4F5F7A47105EBD66D2D1BAE4 /* [CP] Check Pods Manifest.lock */,
+				66554B40087DE9F7135D3BF3 /* [CP] Check Pods Manifest.lock */,
 				D1364DA723F875E300C43CAA /* Sources */,
 				D1364DA823F875E300C43CAA /* Frameworks */,
 				D1364DA923F875E300C43CAA /* Resources */,
-				ECBE0DD2FC4A2ED3F0286295 /* [CP] Embed Pods Frameworks */,
+				A06B42E1E16CE48274907576 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,7 +187,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F5F7A47105EBD66D2D1BAE4 /* [CP] Check Pods Manifest.lock */ = {
+		66554B40087DE9F7135D3BF3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,7 +209,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ECBE0DD2FC4A2ED3F0286295 /* [CP] Embed Pods Frameworks */ = {
+		A06B42E1E16CE48274907576 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -317,6 +315,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -370,13 +369,14 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		D1364DC023F875F100C43CAA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D147A11CA79A0E314BC49CC5 /* Pods-Resplandecer.debug.xcconfig */;
+			baseConfigurationReference = E26F4843CB827E7635F5D2F0 /* Pods-Resplandecer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,7 +396,7 @@
 		};
 		D1364DC123F875F100C43CAA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52F212AC66C08733BD2928D9 /* Pods-Resplandecer.release.xcconfig */;
+			baseConfigurationReference = 3E8BBF29C35996C012150D32 /* Pods-Resplandecer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

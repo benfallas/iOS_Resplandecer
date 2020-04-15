@@ -8,13 +8,55 @@
 //
 import SwiftUI
 
+let list = RecordList(currentPlaylistName: "DeclaracionAlDia")// menuView
+
 struct MenuContent: View {
     var body: some View {
         List {
-            Text("Leaderboard")
-            Text("Leaderboard")
-            Text("Leaderboard")
-            Text("Leaderboard")
+            //            Button(action: {
+            //                list.getRecordList()
+            //            }){
+            //                Text("Click me")
+            //            }
+         
+            NavigationLink(destination: RecordList(currentPlaylistName: "DeclaracionAlDia")){
+                Button(action: {
+                    print("1st menu pressed")
+                    RecordList(currentPlaylistName: "DeclaracionAlDia").getRecordList()
+                }, label: {
+                    Text("DeclaracionAlDia")
+                })
+                
+            }
+        
+            
+            
+//            Button(action: {RecordList(currentPlaylistName: "DeclaracionAlDia").getRecordList()}){
+//                NavigationLink.init(destination: RecordList(currentPlaylistName: "DeclaracionAlDia")){
+//                Text("DeclaracionAlDia")
+//                }
+//            }
+//
+//            Button(action: {RecordList(currentPlaylistName: "Himnos Del Pator ").getRecordList()}){
+//                NavigationLink.init(destination: RecordList(currentPlaylistName: "Himnos Del Pator ")){
+//                    Text("Himnos Del Pator ")
+//                }
+//            }
+//            Button(action: {RecordList(currentPlaylistName: "La Voz Del Evangelio").getRecordList()}){Text("La Voz Del Evangelio") }
+//            Button(action: {RecordList(currentPlaylistName: "Voz Que Clama En El Desierto").getRecordList()}){Text("Voz Que Clama En El Desierto") }
+            //
+            //            NavigationLink.init(destination: RecordList(currentPlaylistName: "DeclaracionAlDia")){
+            //                Text("DeclaracionAlDia")
+            //            }
+            //            NavigationLink.init(destination: RecordList(currentPlaylistName: "Himnos Del Pator ")){
+            //                Text("Himnos Del Pator ")
+            //            }
+            //            NavigationLink(destination: RecordList(currentPlaylistName: "La Voz Del Evangelio")){
+            //                Text("La Voz Del Evangelio")
+            //            }
+            //            NavigationLink(destination: RecordList(currentPlaylistName: "Voz Que Clama En El Desierto")){
+            //                Text("Voz Que Clama En El Desierto")
+            //            }
         }
     }
 }
