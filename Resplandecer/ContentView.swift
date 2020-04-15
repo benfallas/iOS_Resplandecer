@@ -32,7 +32,7 @@ struct ContentView: View {
                         {
                             self.openMenu()
                             print("menu button pressed!")
-//                            player.signalPlay(ID: "id1")
+                            player.signalPlay(ID: "id1")
                         }, label: {
                             Image("barIcon")
                             .renderingMode(Image.TemplateRenderingMode?.init(Image

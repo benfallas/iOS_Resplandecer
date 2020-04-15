@@ -23,10 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		3E8BBF29C35996C012150D32 /* Pods-Resplandecer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.release.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.release.xcconfig"; sourceTree = "<group>"; };
 		93CFD02E2408492D0010CDE4 /* AudioSimplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSimplePlayer.swift; sourceTree = "<group>"; };
 		A164A09105E41966EBC1D53B /* Pods_Resplandecer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Resplandecer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14DC85D24084B7900183521 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+=======
+		93CFD02E2408492D0010CDE4 /* AudioSimplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSimplePlayer.swift; sourceTree = "<group>"; };
+>>>>>>> 3cdd7e5352054c742ede91b6d45cee7920f9ec52
 		D1364DAB23F875E300C43CAA /* Resplandecer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resplandecer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1364DAE23F875E300C43CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1364DB023F875E300C43CAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,8 +106,11 @@
 				C14DC85D24084B7900183521 /* GoogleService-Info.plist */,
 				D1364DBC23F875F100C43CAA /* Info.plist */,
 				D1364DB623F875F100C43CAA /* Preview Content */,
+<<<<<<< HEAD
 				D1A14D70241ECE54006960F0 /* Record.swift */,
 				D1A14D72241ED025006960F0 /* RecordList.swift */,
+=======
+>>>>>>> 3cdd7e5352054c742ede91b6d45cee7920f9ec52
 				93CFD02E2408492D0010CDE4 /* AudioSimplePlayer.swift */,
 			);
 			path = Resplandecer;
