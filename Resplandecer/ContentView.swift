@@ -18,6 +18,13 @@ struct ContentView: View {
 
 
                     Text("Hello, Resplandecer!")
+                
+                Button(action: {
+//                    self.list.getRecordList(recList: [Record]())
+                            
+                                     }, label: {
+                                         Text("Open")
+                                     })
                 }
                 SideMenu(width: 270,
                          isOpen: self.menuOpen,
@@ -38,6 +45,8 @@ struct ContentView: View {
                         }
                     )
                 )
+           
+            
         }
     }
     func openMenu() {

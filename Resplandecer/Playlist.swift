@@ -8,14 +8,39 @@
 
 import SwiftUI
 
-struct Playlist: View {
+struct Playlist: View, Identifiable{
+    var id = UUID()
+
+    var name:String = ""
+    var recordings:[Record] = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, World!")
+    }
+    
+    mutating func setName(updatedName: String){
+        self.name = updatedName
+    }
+    
+    mutating func addRecord(newRecord: Record){
+        self.recordings.append(newRecord)
+    }
+    func getName() -> String{
+        return self.name
+    }
+    
+    func getRecordings() -> [Record]{
+         return self.recordings
+     }
+    init(name:String, recordings:[Record]) {
+        
+        self.name = name
+        self.recordings = recordings
     }
 }
 
 struct Playlist_Previews: PreviewProvider {
     static var previews: some View {
-        Playlist()
+        Playlist(name: "String", recordings: [Record()])
     }
 }

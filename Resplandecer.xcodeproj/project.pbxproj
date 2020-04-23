@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,10 +35,9 @@
 		D1364DBC23F875F100C43CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1364DC223F87CD200C43CAA /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D1364DC423F882C000C43CAA /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		D147A11CA79A0E314BC49CC5 /* Pods-Resplandecer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.debug.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A14D70241ECE54006960F0 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		D1A14D72241ED025006960F0 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
-		D147A11CA79A0E314BC49CC5 /* Pods-Resplandecer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.debug.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.debug.xcconfig"; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +58,6 @@
 				D147A11CA79A0E314BC49CC5 /* Pods-Resplandecer.debug.xcconfig */,
 				52F212AC66C08733BD2928D9 /* Pods-Resplandecer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

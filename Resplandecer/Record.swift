@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct Record: View, Identifiable {
-    var id: UUID
-    var title: String
-    var author: String
-    var radioURL: String
-    var playImage: Image
+    var id = UUID()
+    var title: String = ""
+    var author: String = ""
+    var radioURL: String = ""
+    var playImage: Image? = nil
     
     var body: some View {
         HStack {
