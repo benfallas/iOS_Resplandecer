@@ -13,7 +13,6 @@ struct Record: View, Identifiable {
     var title: String
     var author: String
     var radioURL: String
-    var playImage: Image
     
     var body: some View {
         HStack {
@@ -29,21 +28,25 @@ struct Record: View, Identifiable {
             
             Spacer().frame(width:40)
             
-            HStack {
-            //record Image
-              Image("redplay")
-                .resizable().frame(width: 50, height: 50)
+            recordingPlayButton(action: {
+                print("it works")
+                // For now, directly passing radio url string.
+                // However, it must be changed later to some sort of ID
+                // to take care of other use cases such as 1. stop 2. play next
+                globalPlayer.signalPlay(ID: self.radioURL)
+            } ) {
+                Image(systemName: "play")
             }.frame(width: 50, height: 50).position(x:0, y:50)
             
         }.frame(width: 375, height: 100, alignment: .center)
             .background(Color.black.opacity(0.8))
-
+        
     }
 }
 
 struct Record_Previews: PreviewProvider {
     static var previews: some View {
-        Record(id: UUID(), title:"Apreciar la Palabra de Dios", author:"Pastor Arturo Rios", radioURL:"", playImage: Image("play"))
+        Record(id: UUID(), title:"Apreciar la Palabra de Dios", author:"Pastor Arturo Rios", radioURL:"")
 //            .previewLayout(.fixed(width:450, height:100))
         
     }
