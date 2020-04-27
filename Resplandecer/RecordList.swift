@@ -49,6 +49,8 @@ struct RecordList: View {
             
             let del = value?[self.currentPlaylistName] as? NSDictionary ?? nil
             
+            let i = 0
+            
             //traverse through the playlist and print the children.
             for (key, val) in del ?? NSDictionary() {
                 let realV = val as! NSDictionary
@@ -58,7 +60,7 @@ struct RecordList: View {
                 if (realV).count != 0 {
                     if(self.currentPlaylistName == "DeclaracionAlDia") {
                         
-                        let tempRecord =  Record(id: UUID(), title: realV["Titulo"] as! String, author: realV["AUTOR"] as! String, radioURL: realV["Link"] as! String, playImage: Image("redplay"))
+                        let tempRecord =  Record(id: UUID(), idInt: i, title: realV["Titulo"] as! String, author: realV["AUTOR"] as! String, radioURL: realV["Link"] as! String, playImage: PlayButton(i))
                         
 //                        print("    $   Temp record:", tempRecord)
                         
@@ -89,9 +91,8 @@ struct RecordList: View {
         
         self.recList = tempList
         
-        print("\n\n\n\n\n\n\n\n ##@@@@@## PRINT RECLIST:", recList)
-        
-        print("\n\n\n\n\n\n\n\n ##@@@@@## PRINT TEMPLIST:", tempList)
+//        print("\n\n\n\n\n\n\n\n ##@@@@@## PRINT RECLIST:", recList)
+//        print("\n\n\n\n\n\n\n\n ##@@@@@## PRINT TEMPLIST:", tempList)
         
         
     }

@@ -16,10 +16,8 @@ struct ContentView: View {
         NavigationView {
             ZStack {
               VStack {
-
-
-
                     Text("Hello, Resplandecer!")
+                    
                 }
                 SideMenu(width: 270,
                          isOpen: self.menuOpen,

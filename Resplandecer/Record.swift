@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Record: View, Identifiable {
     var id: UUID
+    var idInt: Int
     var title: String
     var author: String
     var radioURL: String
