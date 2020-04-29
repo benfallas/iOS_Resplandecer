@@ -13,6 +13,7 @@ struct Record: View, Identifiable {
     var title: String
     var author: String
     var radioURL: String
+//    var Image: image
     @State private var didTap:Bool = false
     
     var body: some View {
@@ -50,7 +51,9 @@ struct Record: View, Identifiable {
                 print(self.didTap)
             } ) {
                 if self.didTap == true {
-                    Image(systemName: "pause.fill").frame(width: 40, height: 40)
+//                    self.Image(systemName: "pause.fill").frame(width: 40, height: 40)
+                   Image(systemName: "pause.fill").frame(width: 40, height: 40)
+
                 }
                 else{
                     Image(systemName: "play.fill").frame(width: 40, height: 40)
@@ -66,6 +69,8 @@ struct Record: View, Identifiable {
             .background(Color.black.opacity(0.8))
         
     }
+//    setImage("play.fill")
+//    self.image = Image(systemName: "play.fill").frame(width: 40, height: 40)
 }
 
 struct Record_Previews: PreviewProvider {

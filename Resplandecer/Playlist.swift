@@ -8,14 +8,11 @@
 
 import SwiftUI
 
-struct Playlist: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct Playlist: Identifiable {
+    var id: Int = 0
+    var name: String = ""
+    var recordings: [Record] = []
+    
 }
 
-struct Playlist_Previews: PreviewProvider {
-    static var previews: some View {
-        Playlist()
-    }
-}
+

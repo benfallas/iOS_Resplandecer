@@ -7,32 +7,54 @@
 //
 
 import SwiftUI
-class displayArray: ObservableObject {
-    //background queue: Player directly refer to this list to automatically start next song in the array
-    @Published var queue:[Record] = []
-    //current array: keeps track of the currently opend playlist
-    @Published var currArray:[Record] = []
-    @Published var bigAray:[[Record]] = [[],[],[],[]]
+
+class allRecords {
+    var allPlaylist:[Playlist] = []
 }
+//class queue {
+//    var name: String
+//    var records: [Record]
+//    setters and getters
+//}
+//let currentQ = queue()
+
+
+
+//when someone presses button
+//func(namePlaylist: String, startingPoint: Int)
+// if(currentQ.name == namePlaylistt)
+// scoot everything
+// else
+// currentQ.name = namePlaulist
+// currentQ.records.removeAll
+//currentQ.records = totalRecs.allPlaylist.
+let totalRecs = allRecords()
+
 struct MenuContent: View {
-    @ObservedObject var list = displayArray()
+    
     init() {
         self.getRecordList()
+//        for(i in totalRecs.allPlaylist){
+//            i.name
+//            currentQ.records = i.recordings
+//        }
     }
+    
     var body: some View {
         List {
-            NavigationLink(destination: RecordList( recList: self.$list.bigAray[0])) {
+         
+            NavigationLink(destination: RecordList( recList: 0)) {
                 Text("DeclaracionAlDia")
             }
-            NavigationLink(destination: RecordList( recList: self.$list.bigAray[1])) {
-                Text("Himnos Del Pastor Valverde Sr")
-            }
-            NavigationLink(destination: RecordList( recList: self.$list.bigAray[2])) {
-                Text("La Voz Del Evangelio Eterno (Bilingue)")
-            }
-            NavigationLink(destination: RecordList( recList: self.$list.bigAray[3])) {
-                Text("Voz Que Clama En El Desierto")
-            }
+                NavigationLink(destination: RecordList( recList: 1)) {
+                    Text("Himnos Del Pastor Valverde Sr")
+                }
+                NavigationLink(destination: RecordList( recList: 2)) {
+                    Text("La Voz Del Evangelio Eterno (Bilingue)")
+                }
+                NavigationLink(destination: RecordList( recList: 3)) {
+                    Text("Voz Que Clama En El Desierto")
+                }
         }
     }
     
@@ -40,9 +62,10 @@ struct MenuContent: View {
         db.child("13APXRHCpHma6fFJgci5iSCfzh-1uBP5HwzKbuZ-utH8").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get Database values
             var i = 0
+            var playlistId = 0
+            var tempRec:[Record] = []
             let value = snapshot.value as? NSDictionary
             for(key, _) in (value)! {
-                self.list.bigAray.remove(at: 0)
                 print(key)
                 let del = value?[key] as? NSDictionary ?? nil
                 for (_, innerVal) in del ?? NSDictionary() {
@@ -50,16 +73,18 @@ struct MenuContent: View {
                     if (realValue).count != 0 {
                         if(key as! String == "DeclaracionAlDia") {
                             let tempRecord =  Record(id: i, title: realValue["Titulo"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["Link"] as! String)
-                            self.list.currArray.append(tempRecord)
+                            tempRec.append(tempRecord)
                         }else {
                             let tempRecord =  Record(id: i, title: realValue["TITULO"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["LINK"] as! String)
-                            self.list.currArray.append(tempRecord)
+                            tempRec.append(tempRecord)
+
                         }
                     }
                     i += 1
                 }
-                self.list.bigAray.append(self.list.currArray)
-                self.list.currArray.removeAll()
+                totalRecs.allPlaylist.append(Playlist(id: playlistId, name: key as! String, recordings: tempRec))
+                tempRec.removeAll()
+                playlistId = playlistId + 1
             }
         }) { (error) in
             print(error.localizedDescription)
