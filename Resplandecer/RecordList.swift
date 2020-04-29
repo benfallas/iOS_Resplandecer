@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct RecordList: View {
-    @Binding var recList: [Record]
+    var recList:Int = 0
+    
     var body: some View {
         ZStack {
             VStack {
-                List(recList) { r in
-                    //Playlist(id: UUID(), name: "hw", recordings: [Record()])
+                List(totalRecs.allPlaylist[recList].recordings) { r in
                     Record(id:r.id, title: r.title, author: r.author, radioURL: r.radioURL)
                 }
             }

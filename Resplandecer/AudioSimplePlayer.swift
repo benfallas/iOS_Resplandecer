@@ -33,6 +33,20 @@ class AudioSimplePlayer {
         } catch {
             print("AVAudioPlayer init failed")
         }
+        //when pressed
+//        currentPlay = 123
+//        lastPlay = 123
+        
+        //next time pressed
+//        if the id of the one pressed == lastPlay{
+//            keep image the same
+//        }else{
+//            then unclick lastPlay
+//            click currentPlay
+//            update both
+//        }
+        
+
         
     }
     
