@@ -39,6 +39,7 @@ struct MenuContent: View {
     func getRecordList() {
         db.child("13APXRHCpHma6fFJgci5iSCfzh-1uBP5HwzKbuZ-utH8").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get Database values
+            var i = 0
             let value = snapshot.value as? NSDictionary
             for(key, _) in (value)! {
                 self.list.bigAray.remove(at: 0)
@@ -48,13 +49,14 @@ struct MenuContent: View {
                     let realValue = innerVal as! NSDictionary
                     if (realValue).count != 0 {
                         if(key as! String == "DeclaracionAlDia") {
-                            let tempRecord =  Record(id: UUID(), title: realValue["Titulo"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["Link"] as! String)
+                            let tempRecord =  Record(id: i, title: realValue["Titulo"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["Link"] as! String)
                             self.list.currArray.append(tempRecord)
                         }else {
-                            let tempRecord =  Record(id: UUID(), title: realValue["TITULO"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["LINK"] as! String)
+                            let tempRecord =  Record(id: i, title: realValue["TITULO"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["LINK"] as! String)
                             self.list.currArray.append(tempRecord)
                         }
                     }
+                    i += 1
                 }
                 self.list.bigAray.append(self.list.currArray)
                 self.list.currArray.removeAll()

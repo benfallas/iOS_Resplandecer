@@ -22,7 +22,7 @@ class AudioSimplePlayer {
         
         guard let url = URL.init(string: urlString) else { return }
         let playerItem = AVPlayerItem.init(url: url)
-
+        
         do {
             self.player = try AVPlayer(playerItem:playerItem)
             player!.volume = 1.0
@@ -36,8 +36,11 @@ class AudioSimplePlayer {
         
     }
     
-    class func stop() {
-                
+    func stop() {
+        if let tempPlayer = player{
+            tempPlayer.pause()
+            self.player = nil
+        }
     }
     
     class func playNext() {
@@ -53,6 +56,9 @@ class AudioSimplePlayer {
         self.play(urlString: ID)
         
         //Using ID given, find the correct url string.
+        //        for(){
+        //            queue
+        //        }
         //self.play(urlString: "http://radioresplandecer.com/wp-content/uploads/2016/09/A-Solas-Con-el-Maestro.mp3")
         
         // Recording.playlist
