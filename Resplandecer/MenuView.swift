@@ -45,6 +45,7 @@ struct MenuContent: View {
          
             NavigationLink(destination: RecordList( recList: 0)) {
                 Text("DeclaracionAlDia")
+                
             }
                 NavigationLink(destination: RecordList( recList: 1)) {
                     Text("Himnos Del Pastor Valverde Sr")

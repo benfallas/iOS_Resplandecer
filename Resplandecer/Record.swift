@@ -20,11 +20,11 @@ struct Record: View, Identifiable {
         HStack {
             VStack(alignment: .leading) {
                 //record title
-                Text(title).foregroundColor(Color.white).underline().bold()
+                Text(title).foregroundColor(Color(red: 0.72, green: 0.05, blue: 0.04)).underline().bold()
                 Spacer().frame(height:20)
                 
                 //record author
-                Text(author).foregroundColor(Color.white).underline()
+                Text(author).foregroundColor(Color(red: 0.72, green: 0.05, blue: 0.04))
             }.padding()
                 .frame(width: 275, height: 50, alignment: .leading)
             
@@ -64,9 +64,10 @@ struct Record: View, Identifiable {
                 .font(.largeTitle)
                 .overlay( RoundedRectangle(cornerRadius: 50).stroke(Color.white, lineWidth: 4))
                 .clipShape(Circle()).position(x:0, y:50)
+        
             
         }.frame(width: 375, height: 100, alignment: .center)
-            .background(Color.black.opacity(0.8))
+            .background(Color(red: 0.94, green: 0.85, blue: 0.85))
         
     }
 //    setImage("play.fill")

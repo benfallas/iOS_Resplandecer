@@ -33,20 +33,6 @@ class AudioSimplePlayer {
         } catch {
             print("AVAudioPlayer init failed")
         }
-        //when pressed
-//        currentPlay = 123
-//        lastPlay = 123
-        
-        //next time pressed
-//        if the id of the one pressed == lastPlay{
-//            keep image the same
-//        }else{
-//            then unclick lastPlay
-//            click currentPlay
-//            update both
-//        }
-        
-
         
     }
     
@@ -80,5 +66,18 @@ class AudioSimplePlayer {
         //1-b. don't play if it ID cannot be found or invalid
         //1-c. continue playing if ID is same as the current song playing
         
+    }
+    func playLive(){
+//        let playlistNum = Int.random(in: 0..<3)
+//        let songNum = Int.random(in: 0..<12)
+//        //queue needs to cleared
+//        //queue populated with totalRecs.allPlaylist[playlistNum]
+//        let currentRecord = totalRecs.allPlaylist[playlistNum].recordings[songNum].radioURL
+//        //queue starting point at currrentRecord
+//
+//        print(totalRecs.allPlaylist[playlistNum].recordings[songNum].title)
+        self.play(urlString: "http://107.215.165.202:8000/resplandecer?hash=1573611071190.mp3")
+
+
     }
 }
