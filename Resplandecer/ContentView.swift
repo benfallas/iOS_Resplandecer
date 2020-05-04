@@ -22,21 +22,12 @@ struct ContentView: View {
                 VStack{
                     VStack(alignment: .center) {
                         Button(action: {
-                            //when user interacts with the button, check background queue
-                            // if the current array that user access differ from background queue
-                            // then update the backgroudn q
-                            
-                            // For now, directly passing radio url string.
-                            // However, it must be changed later to some sort of ID
-                            // to take care of other use cases such as 1. stop 2. play next
-                            //                globalPlayer.signalPlay(ID: self.id)
-                            
                             if self.didTap == false{
                                 self.didTap = true
-                                //                            globalPlayer.signalPlay(ID: self.radioURL)
+                                globalPlayer.signalPlayString(urlString: "http://radioresplandecer.com/radio-24/7")
                             } else{
                                 self.didTap = false
-                                //                            globalPlayer.stop()
+                                globalPlayer.stop()
                             }
                             print(self.didTap)
                         } ) {

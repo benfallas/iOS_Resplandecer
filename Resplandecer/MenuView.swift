@@ -11,83 +11,145 @@ import SwiftUI
 class allRecords {
     var allPlaylist:[Playlist] = []
 }
-//class queue {
-//    var name: String
-//    var records: [Record]
-//    setters and getters
-//}
-//let currentQ = queue()
 
-
-
-//when someone presses button
-//func(namePlaylist: String, startingPoint: Int)
-// if(currentQ.name == namePlaylistt)
-// scoot everything
-// else
-// currentQ.name = namePlaulist
-// currentQ.records.removeAll
-//currentQ.records = totalRecs.allPlaylist.
-let totalRecs = allRecords()
-
-struct MenuContent: View {
+class Queue{
+    var currentPlayListIndex: Int
+    var list: [Record]
+    var currnetPlayListSize: Int
+    var startingPointIndex: Int
     
-    init() {
-        self.getRecordList()
-//        for(i in totalRecs.allPlaylist){
-//            i.name
-//            currentQ.records = i.recordings
-//        }
+    //    private var totalSize: Int = totalRecs.allPlaylist[backgroundQ.currentPlayListIndex].recordings.count
+    
+    init(){
+        self.currentPlayListIndex = -1
+        self.list = []
+        self.currnetPlayListSize = 0
+        self.startingPointIndex = -1
+        //        self.totalSize = 0
+    }
+    init(index: Int){
+        self.currentPlayListIndex = index
+        self.list = totalRecs.allPlaylist[index].recordings
+        self.currnetPlayListSize = totalRecs.allPlaylist[index].recordings.count
+        self.startingPointIndex = -1
+        //        self.totalSize = list.count
     }
     
-    var body: some View {
-        List {
-         
-            NavigationLink(destination: RecordList( recList: 0)) {
-                Text("DeclaracionAlDia")
-            }
-                NavigationLink(destination: RecordList( recList: 1)) {
-                    Text("Himnos Del Pastor Valverde Sr")
-                }
-                NavigationLink(destination: RecordList( recList: 2)) {
-                    Text("La Voz Del Evangelio Eterno (Bilingue)")
-                }
-                NavigationLink(destination: RecordList( recList: 3)) {
-                    Text("Voz Que Clama En El Desierto")
-                }
+    // setters and getters
+    //when someone presses button
+    func updatePlayListIndex(index: Int){
+        print("Hello World")
+        if(self.currentPlayListIndex != index){
+            self.currentPlayListIndex = index
+            self.currnetPlayListSize = totalRecs.allPlaylist[self.currentPlayListIndex].recordings.count
+        }
+        dump(self.currentPlayListIndex)
+    }
+    
+    func updateStartingPointIndex(tappedIndex: Int){
+        if(self.startingPointIndex != tappedIndex){
+            self.startingPointIndex = tappedIndex
         }
     }
     
-    func getRecordList() {
-        db.child("13APXRHCpHma6fFJgci5iSCfzh-1uBP5HwzKbuZ-utH8").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get Database values
-            var i = 0
-            var playlistId = 0
-            var tempRec:[Record] = []
-            let value = snapshot.value as? NSDictionary
-            for(key, _) in (value)! {
-                print(key)
-                let del = value?[key] as? NSDictionary ?? nil
-                for (_, innerVal) in del ?? NSDictionary() {
-                    let realValue = innerVal as! NSDictionary
-                    if (realValue).count != 0 {
-                        if(key as! String == "DeclaracionAlDia") {
-                            let tempRecord =  Record(id: i, title: realValue["Titulo"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["Link"] as! String)
-                            tempRec.append(tempRecord)
-                        }else {
-                            let tempRecord =  Record(id: i, title: realValue["TITULO"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["LINK"] as! String)
-                            tempRec.append(tempRecord)
+}
 
-                        }
-                    }
-                    i += 1
-                }
-                totalRecs.allPlaylist.append(Playlist(id: playlistId, name: key as! String, recordings: tempRec))
-                tempRec.removeAll()
-                playlistId = playlistId + 1
+var backgroundQ = Queue()
+let totalRecs = allRecords()
+var currentPlayListIndex = -1
+
+struct MenuContent: View {
+    @State var tempIsTapped: Bool = false
+    @State var tempTappedID: Int = -1
+    @State var isPlayList_0_Presented = false
+    @State var isPlayList_1_Presented = false
+    @State var isPlayList_2_Presented = false
+    @State var isPlayList_3_Presented = false
+    
+    //    init() {
+    //        self.getRecordList()
+    //    }
+    let listOfPlayList = [
+        RecordList( recList: 0),
+        RecordList( recList: 1),
+        RecordList( recList: 2),
+        RecordList( recList: 3)
+    ]
+    
+    var body: some View {
+        List {
+            NavigationLink(destination: listOfPlayList[0], isActive: $isPlayList_0_Presented) {
+                Text("DeclaracionAlDia")
+                //                    .onTapGesture {
+                //                        currentPlayListIndex = 0
+                //                        print("            tapped play list", currentPlayListIndex)
+                //                        self.isPlayList_0_Presented = true
+                //                        self.isPlayList_1_Presented = false
+                //                        self.isPlayList_2_Presented = false
+                //                        self.isPlayList_3_Presented = false
+                //                }
+            }.onTapGesture {
+                currentPlayListIndex = 0
+                print("            tapped play list", currentPlayListIndex)
+                self.isPlayList_0_Presented = true
+                self.isPlayList_1_Presented = false
+                self.isPlayList_2_Presented = false
+                self.isPlayList_3_Presented = false
             }
-        }) { (error) in
-            print(error.localizedDescription)
+            NavigationLink(destination: listOfPlayList[1], isActive: $isPlayList_1_Presented) {
+                Text("Himnos Del Pastor Valverde Sr")
+                //                    .onTapGesture {
+                //                        currentPlayListIndex = 1
+                //                        print("             tapped play list", currentPlayListIndex)
+                //                        self.isPlayList_0_Presented = false
+                //                        self.isPlayList_1_Presented = true
+                //                        self.isPlayList_2_Presented = false
+                //                        self.isPlayList_3_Presented = false
+                //                }
+            }.onTapGesture {
+                currentPlayListIndex = 1
+                print("             tapped play list", currentPlayListIndex)
+                self.isPlayList_0_Presented = false
+                self.isPlayList_1_Presented = true
+                self.isPlayList_2_Presented = false
+                self.isPlayList_3_Presented = false
+            }
+            NavigationLink(destination: listOfPlayList[2], isActive: $isPlayList_2_Presented) {
+                Text("La Voz Del Evangelio Eterno (Bilingue)")
+                //                    .onTapGesture {
+                //                        currentPlayListIndex = 2
+                //                        print("           tapped play list", currentPlayListIndex)
+                //                        self.isPlayList_0_Presented = false
+                //                        self.isPlayList_1_Presented = false
+                //                        self.isPlayList_2_Presented = true
+                //                        self.isPlayList_3_Presented = false
+                //                }
+            }.onTapGesture {
+                currentPlayListIndex = 2
+                print("           tapped play list", currentPlayListIndex)
+                self.isPlayList_0_Presented = false
+                self.isPlayList_1_Presented = false
+                self.isPlayList_2_Presented = true
+                self.isPlayList_3_Presented = false
+            }
+            NavigationLink(destination: listOfPlayList[3], isActive: $isPlayList_3_Presented) {
+                Text("Voz Que Clama En El Desierto")
+                //                    .onTapGesture {
+                //                        currentPlayListIndex = 3
+                //                        print("               tapped play list", currentPlayListIndex)
+                //                        self.isPlayList_0_Presented = false
+                //                        self.isPlayList_1_Presented = false
+                //                        self.isPlayList_2_Presented = false
+                //                        self.isPlayList_3_Presented = true
+                //                }
+            }.onTapGesture {
+                currentPlayListIndex = 3
+                print("               tapped play list", currentPlayListIndex)
+                self.isPlayList_0_Presented = false
+                self.isPlayList_1_Presented = false
+                self.isPlayList_2_Presented = false
+                self.isPlayList_3_Presented = true
+            }
         }
     }
 }

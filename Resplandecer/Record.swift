@@ -12,10 +12,15 @@ struct Record: View, Identifiable {
     var id: Int
     var title: String
     var author: String
-    var radioURL: String
-//    var Image: image
-    @State private var didTap:Bool = false
+    var radioURL: String    
+    @Binding var isPlaying: Bool
+    @Binding var currentPlayingID: Int
     
+    func printVals(){
+        print(currentPlayingID)
+        print(self.id)
+        print(isPlaying)
+    }
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -30,53 +35,27 @@ struct Record: View, Identifiable {
             
             Spacer().frame(width:40)
             
-            Button(action: {
-                //when user interacts with the button, check background queue
-                // if the current array that user access differ from background queue
-                // then update the backgroudn q
-                
-                // For now, directly passing radio url string.
-                // However, it must be changed later to some sort of ID
-                // to take care of other use cases such as 1. stop 2. play next
-                //                globalPlayer.signalPlay(ID: self.id)
-                
-                
-                if self.didTap == false{
-                    self.didTap = true
-                    globalPlayer.signalPlay(ID: self.radioURL)
-                } else{
-                    self.didTap = false
-                    globalPlayer.stop()
-                }
-                print(self.didTap)
-            } ) {
-                if self.didTap == true {
-//                    self.Image(systemName: "pause.fill").frame(width: 40, height: 40)
-                   Image(systemName: "pause.fill").frame(width: 40, height: 40)
-
-                }
-                else{
+            ZStack{
+                if((self.id == currentPlayingID) && isPlaying) {
+                    Image(systemName: "pause.fill").frame(width: 40, height: 40)
+                } else {
                     Image(systemName: "play.fill").frame(width: 40, height: 40)
                 }
-            }.padding()
+            } .padding()
                 .foregroundColor(.white)
                 .background(Color.red)
                 .font(.largeTitle)
                 .overlay( RoundedRectangle(cornerRadius: 50).stroke(Color.white, lineWidth: 4))
                 .clipShape(Circle()).position(x:0, y:50)
+            .onTapGesture {
+               
+                    self.printVals()
+            }
+            
+//            PlayesrSlider()
             
         }.frame(width: 375, height: 100, alignment: .center)
             .background(Color.black.opacity(0.8))
-        
-    }
-//    setImage("play.fill")
-//    self.image = Image(systemName: "play.fill").frame(width: 40, height: 40)
-}
-
-struct Record_Previews: PreviewProvider {
-    static var previews: some View {
-        Record(id: 0, title:"Apreciar la Palabra de Dios", author:"Pastor Arturo Rios", radioURL:"")
-        //            .previewLayout(.fixed(width:450, height:100))
         
     }
 }
