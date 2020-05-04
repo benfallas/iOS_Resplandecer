@@ -154,7 +154,6 @@ class AudioSimplePlayer {
         //        self.play()
         
         globalPlayer.signalPlay(ID: backgroundQ.startingPointIndex)
-        
     }
     
     func stop() {
@@ -181,8 +180,16 @@ class AudioSimplePlayer {
         
     }
     
-    func signalPlayString(urlString: String){
+    func signalPlayLiveRadio(){
         // call this only for main 24/7 radio station
-        self.play(urlString: urlString)
+//        let playlistNum = Int.random(in: 0..<3)
+//        let songNum = Int.random(in: 0..<12)
+//        //queue needs to cleared
+//        //queue populated with totalRecs.allPlaylist[playlistNum]
+//        let currentRecord = totalRecs.allPlaylist[playlistNum].recordings[songNum].radioURL
+//        //queue starting point at currrentRecord
+//
+//        print(totalRecs.allPlaylist[playlistNum].recordings[songNum].title)
+        self.play(urlString: "http://107.215.165.202:8000/resplandecer?hash=1573611071190.mp3")
     }
 }

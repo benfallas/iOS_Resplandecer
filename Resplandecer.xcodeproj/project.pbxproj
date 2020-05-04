@@ -11,6 +11,7 @@
 		93F7BEAB2457250800EE3C20 /* RecordingPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7BEAA2457250800EE3C20 /* RecordingPlayButton.swift */; };
 		ABE8D5B35ED39430972F2856 /* Pods_Resplandecer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */; };
 		C14DC85E24084B7900183521 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C14DC85D24084B7900183521 /* GoogleService-Info.plist */; };
+		C1B722AA245D0DB0005E133D /* BigRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B722A9245D0DB0005E133D /* BigRadioButton.swift */; };
 		D1364DAF23F875E300C43CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DAE23F875E300C43CAA /* AppDelegate.swift */; };
 		D1364DB123F875E300C43CAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DB023F875E300C43CAA /* SceneDelegate.swift */; };
 		D1364DB323F875E300C43CAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DB223F875E300C43CAA /* ContentView.swift */; };
@@ -29,6 +30,7 @@
 		93F7BEAA2457250800EE3C20 /* RecordingPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPlayButton.swift; sourceTree = "<group>"; };
 		A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Resplandecer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14DC85D24084B7900183521 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C1B722A9245D0DB0005E133D /* BigRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigRadioButton.swift; sourceTree = "<group>"; };
 		D1364DAB23F875E300C43CAA /* Resplandecer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resplandecer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1364DAE23F875E300C43CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1364DB023F875E300C43CAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				D1364DB623F875F100C43CAA /* Preview Content */,
 				D1A14D70241ECE54006960F0 /* Record.swift */,
 				D1A14D72241ED025006960F0 /* RecordList.swift */,
+				C1B722A9245D0DB0005E133D /* BigRadioButton.swift */,
 			);
 			path = Resplandecer;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				D1A14D71241ECE54006960F0 /* Record.swift in Sources */,
 				93F7BEA9245724C900EE3C20 /* AudioSimplePlayer.swift in Sources */,
 				D1364DB323F875E300C43CAA /* ContentView.swift in Sources */,
+				C1B722AA245D0DB0005E133D /* BigRadioButton.swift in Sources */,
 				D1364DC323F87CD200C43CAA /* MenuView.swift in Sources */,
 				D1364DC523F882C000C43CAA /* Playlist.swift in Sources */,
 				D1A14D73241ED025006960F0 /* RecordList.swift in Sources */,

@@ -48,7 +48,8 @@ struct RecordList: View {
                         }
                     }
                 }// VStack
-            }// ZStack
+            }.navigationBarTitle(LocalizedStringKey(totalRecs.allPlaylist[recList].name), displayMode: .inline)
+            // ZStack
         }//Navigation View
     }
 }

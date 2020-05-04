@@ -85,7 +85,7 @@ struct MenuContent: View {
                 self.isPlayList_0_Presented = true
                 self.isPlayList_1_Presented = false
                 self.isPlayList_2_Presented = false
-                self.isPlayList_3_Presented = false
+                self.isPlayList_3_Presented = false                
             }
             NavigationLink(destination: listOfPlayList[1], isActive: $isPlayList_1_Presented) {
                 Text("Himnos Del Pastor Valverde Sr")
