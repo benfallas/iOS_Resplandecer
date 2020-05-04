@@ -47,10 +47,10 @@ struct Record: View, Identifiable {
                 .font(.largeTitle)
                 .overlay( RoundedRectangle(cornerRadius: 50).stroke(Color.white, lineWidth: 4))
                 .clipShape(Circle()).position(x:0, y:50)
-            .onTapGesture {
-               
-                    self.printVals()
-            }
+//            .onTapGesture {
+//               
+//                    self.printVals()
+//            }
             
 //            PlayesrSlider()
             

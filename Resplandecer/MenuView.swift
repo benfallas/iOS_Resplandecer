@@ -80,17 +80,8 @@ struct MenuContent: View {
         List {
             NavigationLink(destination: listOfPlayList[0], isActive: $isPlayList_0_Presented) {
                 Text("DeclaracionAlDia")
-                //                    .onTapGesture {
-                //                        currentPlayListIndex = 0
-                //                        print("            tapped play list", currentPlayListIndex)
-                //                        self.isPlayList_0_Presented = true
-                //                        self.isPlayList_1_Presented = false
-                //                        self.isPlayList_2_Presented = false
-                //                        self.isPlayList_3_Presented = false
-                //                }
             }.onTapGesture {
                 currentPlayListIndex = 0
-                print("            tapped play list", currentPlayListIndex)
                 self.isPlayList_0_Presented = true
                 self.isPlayList_1_Presented = false
                 self.isPlayList_2_Presented = false
@@ -98,17 +89,8 @@ struct MenuContent: View {
             }
             NavigationLink(destination: listOfPlayList[1], isActive: $isPlayList_1_Presented) {
                 Text("Himnos Del Pastor Valverde Sr")
-                //                    .onTapGesture {
-                //                        currentPlayListIndex = 1
-                //                        print("             tapped play list", currentPlayListIndex)
-                //                        self.isPlayList_0_Presented = false
-                //                        self.isPlayList_1_Presented = true
-                //                        self.isPlayList_2_Presented = false
-                //                        self.isPlayList_3_Presented = false
-                //                }
             }.onTapGesture {
                 currentPlayListIndex = 1
-                print("             tapped play list", currentPlayListIndex)
                 self.isPlayList_0_Presented = false
                 self.isPlayList_1_Presented = true
                 self.isPlayList_2_Presented = false
@@ -116,17 +98,8 @@ struct MenuContent: View {
             }
             NavigationLink(destination: listOfPlayList[2], isActive: $isPlayList_2_Presented) {
                 Text("La Voz Del Evangelio Eterno (Bilingue)")
-                //                    .onTapGesture {
-                //                        currentPlayListIndex = 2
-                //                        print("           tapped play list", currentPlayListIndex)
-                //                        self.isPlayList_0_Presented = false
-                //                        self.isPlayList_1_Presented = false
-                //                        self.isPlayList_2_Presented = true
-                //                        self.isPlayList_3_Presented = false
-                //                }
             }.onTapGesture {
                 currentPlayListIndex = 2
-                print("           tapped play list", currentPlayListIndex)
                 self.isPlayList_0_Presented = false
                 self.isPlayList_1_Presented = false
                 self.isPlayList_2_Presented = true
@@ -134,17 +107,8 @@ struct MenuContent: View {
             }
             NavigationLink(destination: listOfPlayList[3], isActive: $isPlayList_3_Presented) {
                 Text("Voz Que Clama En El Desierto")
-                //                    .onTapGesture {
-                //                        currentPlayListIndex = 3
-                //                        print("               tapped play list", currentPlayListIndex)
-                //                        self.isPlayList_0_Presented = false
-                //                        self.isPlayList_1_Presented = false
-                //                        self.isPlayList_2_Presented = false
-                //                        self.isPlayList_3_Presented = true
-                //                }
             }.onTapGesture {
                 currentPlayListIndex = 3
-                print("               tapped play list", currentPlayListIndex)
                 self.isPlayList_0_Presented = false
                 self.isPlayList_1_Presented = false
                 self.isPlayList_2_Presented = false
