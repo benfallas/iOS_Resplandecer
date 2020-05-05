@@ -9,18 +9,15 @@
 import SwiftUI
 
 struct Record: View, Identifiable {
+    
+    @State var sliderValue = 0.0
+    
     var id: Int
     var title: String
     var author: String
     var radioURL: String    
-    @Binding var isPlaying: Bool
-    @Binding var currentPlayingID: Int
+    @Binding var isTapped: Bool
     
-    func printVals(){
-        print(currentPlayingID)
-        print(self.id)
-        print(isPlaying)
-    }
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -30,13 +27,15 @@ struct Record: View, Identifiable {
                 
                 //record author
                 Text(author).foregroundColor(Color(red: 0.72, green: 0.05, blue: 0.04))
+                
+                
             }.padding()
                 .frame(width: 275, height: 50, alignment: .leading)
             
             Spacer().frame(width:40)
             
             ZStack{
-                if((self.id == currentPlayingID) && isPlaying) {
+                if((self.id == backgroundQ.startingPointIndex) && (currentPlayListIndex == backgroundQ.currentPlayListIndex)) {
                     Image(systemName: "pause.fill").frame(width: 40, height: 40)
                 } else {
                     Image(systemName: "play.fill").frame(width: 40, height: 40)
@@ -46,15 +45,8 @@ struct Record: View, Identifiable {
                 .background(Color.red)
                 .font(.largeTitle)
                 .overlay( RoundedRectangle(cornerRadius: 50).stroke(Color.white, lineWidth: 4))
-                .clipShape(Circle()).position(x:0, y:50)
-            
-//            .onTapGesture {
-//               
-//                    self.printVals()
-//            }
-            
-//            PlayesrSlider()
-            
+                .clipShape(Circle()).position(x:0, y:50)      
+        
         }.frame(width: 375, height: 100, alignment: .center)
             .background(Color(red: 0.94, green: 0.85, blue: 0.85))
         

@@ -107,13 +107,13 @@ struct ContentView: View {
                          isOpen: self.menuOpen,
                          menuClose: self.openMenu)
                 
-            }.navigationBarTitle("")
+            }
+            .navigationBarTitle("")
                 //*************************Menu Icon******************************
                 .navigationBarItems(leading:
                     Button(action:
                         {
                             self.openMenu()
-                            print("menu button pressed!")
                     }, label: {
                         Image("redMenu")
                             .renderingMode(Image.TemplateRenderingMode?.init(Image

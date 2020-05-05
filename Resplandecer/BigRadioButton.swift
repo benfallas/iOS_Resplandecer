@@ -21,49 +21,47 @@ struct BigRadioButton: View {
     @State var animateColor1: Bool = true
     @State var insideFill: String = "play.fill"
     @State var insideToggle: Bool = false
-
+    
     var body: some View {
         ZStack {
             Arc(radius: outer).fill(Color.color3)
-                            .frame(width: 200, height: 200).scaleEffect(animateColor1 ? 1: 0.8)
-                                .animation(Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true).speed(1.0)).onAppear(){
-                                    self.animateColor1.toggle()
-                            }
+                .frame(width: 200, height: 200).scaleEffect(animateColor1 ? 1: 0.8)
+                .animation(Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true).speed(1.0)).onAppear(){
+                    self.animateColor1.toggle()
+            }
             Arc(radius: inner).fill(Color.color2)
-                            .frame(width: 100, height: 100).scaleEffect(animateColor ? 1: 0.8)
-                                .animation(Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true).speed(1.0)).onAppear(){
-                                    self.animateColor.toggle()
-                            }
+                .frame(width: 100, height: 100).scaleEffect(animateColor ? 1: 0.8)
+                .animation(Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true).speed(1.0)).onAppear(){
+                    self.animateColor.toggle()
+            }
             VStack {
                 ZStack {
                     Triangle(triWidth: triWidth).fill(Color.color1)
-                                .frame(width: 45, height: 100)
-                                .cornerRadius(15)
+                        .frame(width: 45, height: 100)
+                        .cornerRadius(15)
                         .offset(y: 45)
                     Circle().fill(Color.color1)
-                                .frame(width: 45, height: 100)
+                        .frame(width: 45, height: 100)
                         .offset(y: 5).overlay(Image(systemName: insideFill).frame(width: 15, height: 25, alignment: .bottom
                         )).onTapGesture {
                             if(!self.insideToggle){
                                 self.insideToggle.toggle()
                                 self.insideFill = "pause.fill"
                                 globalPlayer.signalPlayLiveRadio()
-
+                                
                             } else {
                                 globalPlayer.stop()
                                 self.insideFill = "play.fill"
                                 self.insideToggle.toggle()
-
-
+                                
                             }
-                            
                     }
                 }
             }
         }
     }
     
- 
+    
 }
 
 
@@ -101,18 +99,18 @@ struct Triangle : Shape {
 }
 
 struct BigRadioButton_Previews: PreviewProvider {
-        var outerArc: CGFloat = 80
-              var innerArc: CGFloat = 60
-             var triW: CGFloat = 20
-           var circleWidth: CGFloat = 10
-              var circleHeight: CGFloat = 10
-      @State static var startAnimation = false
+    var outerArc: CGFloat = 80
+    var innerArc: CGFloat = 60
+    var triW: CGFloat = 20
+    var circleWidth: CGFloat = 10
+    var circleHeight: CGFloat = 10
+    @State static var startAnimation = false
     static var previews: some View {
         BigRadioButton(beginAnimation: beginAnimation, outer:CGFloat(80), inner:CGFloat(60), triWidth: CGFloat(20), circleWidth: 10 ,cicleHeight: 10)
         
     }
     static func beginAnimation() {
         self.startAnimation.toggle()
-            print("after call being animation")
-        }
+        print("after call being animation")
+    }
 }

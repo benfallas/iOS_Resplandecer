@@ -12,7 +12,6 @@ import Firebase
 
 struct listLoadObj {
     @State var tempIsTapped: Bool = false
-    @State var tempTappedID: Int = -1
     let db =  Database.database().reference();
 
 func getRecordList() {
@@ -29,10 +28,10 @@ func getRecordList() {
                 let realValue = innerVal as! NSDictionary
                 if (realValue).count != 0 {
                     if(key as! String == "DeclaracionAlDia") {
-                        let tempRecord =  Record(id: i, title: realValue["Titulo"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["Link"] as! String, isPlaying: self.$tempIsTapped, currentPlayingID: self.$tempTappedID)
+                        let tempRecord =  Record(id: i, title: realValue["Titulo"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["Link"] as! String, isTapped: self.$tempIsTapped)
                         tempRec.append(tempRecord)
                     }else {
-                        let tempRecord =  Record(id: i, title: realValue["TITULO"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["LINK"] as! String, isPlaying: self.$tempIsTapped, currentPlayingID: self.$tempTappedID)
+                        let tempRecord =  Record(id: i, title: realValue["TITULO"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["LINK"] as! String, isTapped: self.$tempIsTapped)
                         tempRec.append(tempRecord)
                         
                     }

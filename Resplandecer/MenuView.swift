@@ -38,12 +38,10 @@ class Queue{
     // setters and getters
     //when someone presses button
     func updatePlayListIndex(index: Int){
-        print("Hello World")
         if(self.currentPlayListIndex != index){
             self.currentPlayListIndex = index
             self.currnetPlayListSize = totalRecs.allPlaylist[self.currentPlayListIndex].recordings.count
         }
-        dump(self.currentPlayListIndex)
     }
     
     func updateStartingPointIndex(tappedIndex: Int){
@@ -58,6 +56,20 @@ var backgroundQ = Queue()
 let totalRecs = allRecords()
 var currentPlayListIndex = -1
 
+let listOfPlayList = [
+    RecordList(model: RecordListViewModel(recList: 0)),
+    RecordList(model: RecordListViewModel(recList: 1)),
+    RecordList(model: RecordListViewModel(recList: 2)),
+    RecordList(model: RecordListViewModel(recList: 3))
+]
+
+//let listOfPlayList = [
+//    RecordList(recList: 0),
+//    RecordList(recList: 1),
+//    RecordList(recList: 2),
+//    RecordList(recList: 3)
+//]
+
 struct MenuContent: View {
     @State var tempIsTapped: Bool = false
     @State var tempTappedID: Int = -1
@@ -69,12 +81,6 @@ struct MenuContent: View {
     //    init() {
     //        self.getRecordList()
     //    }
-    let listOfPlayList = [
-        RecordList( recList: 0),
-        RecordList( recList: 1),
-        RecordList( recList: 2),
-        RecordList( recList: 3)
-    ]
     
     var body: some View {
         List {

@@ -7,49 +7,65 @@
 //
 import SwiftUI
 
+final class RecordListViewModel : ObservableObject {
+    
+    var recList: Int
+    @Published var tappedID: Int = -1
+    
+    init(){
+        recList = 0
+        _tappedID = .init(initialValue: -1)
+    }
+    
+    init(recList: Int){
+        self.recList = recList
+        _tappedID = .init(initialValue: -1)
+    }
+    
+    public func setTappedID(id: Int){
+        tappedID = id
+    }
+    
+}
+
 struct RecordList: View {
-    var recList: Int = 0
     @State var didTap: Bool = false
-    @State var tappedID: Int = -1
+    @ObservedObject var model: RecordListViewModel
+    
     var body: some View {
-        NavigationView {
-            ZStack {
-                VStack {
-                    List(totalRecs.allPlaylist[recList].recordings) { r in
-                        Record(id:r.id, title: r.title, author: r.author, radioURL: r.radioURL, isPlaying: self.$didTap, currentPlayingID: self.$tappedID)
-                            .onTapGesture {
-                                //when user interacts with the button, check background queue
-                                // if the current array that user access differ from background queue
-                                // then update the backgroudn q
+        ZStack {
+            VStack {
+                List(totalRecs.allPlaylist[model.recList].recordings) { r in
+                    Record(id:r.id, title: r.title, author: r.author, radioURL: r.radioURL, isTapped: self.$didTap)
+                        .onTapGesture {
+                            // When user interacts by clicking, update background queue
+                            // if the current play list that user access differs from background queue,
+                            // then update the background q
+                            
+                            self.model.setTappedID(id: r.id)
+                            
+                            if(self.didTap == false){
+                                self.didTap = true
                                 
-                                // For now, directly passing radio url string.
-                                // However, it must be changed later to some sort of ID
-                                // to take care of other use cases such as 1. stop 2. play next
-                                //                globalPlayer.signalPlay(ID: self.id)
-                                print(r.id)
+                                backgroundQ.updatePlayListIndex(index: currentPlayListIndex)
+                                backgroundQ.updateStartingPointIndex(tappedIndex: self.model.tappedID)
+                                self.model.tappedID = backgroundQ.startingPointIndex
                                 
-                                print("#", currentPlayListIndex)
-                                self.tappedID = r.id
+                                //Signal player to play
+                                globalPlayer.signalPlay(ID: self.model.tappedID)
                                 
-                                if (self.didTap == false){
-                                    self.didTap = true
-                                    
-                                    backgroundQ.updatePlayListIndex(index: currentPlayListIndex)
-                                    backgroundQ.updateStartingPointIndex(tappedIndex: self.tappedID)
-                                    
-                                    self.tappedID = backgroundQ.startingPointIndex
-                                    //                                globalPlayer.signalPlay(ID: r.radioURL)
-                                    globalPlayer.signalPlay(ID: self.tappedID)
-                                    
-                                } else{
-                                    self.didTap = false
-                                    globalPlayer.stop()
-                                }
-                        }
+                            } else {
+                                self.didTap = false
+                                
+                                backgroundQ.updateStartingPointIndex(tappedIndex: -1)
+                                
+                                //Signal player to stop
+                                globalPlayer.stop()
+                            }
                     }
-                }// VStack
-            }.navigationBarTitle(LocalizedStringKey(totalRecs.allPlaylist[recList].name), displayMode: .inline)
-            // ZStack
-        }//Navigation View
+                }
+            }// VStack
+        }.navigationBarTitle(LocalizedStringKey(totalRecs.allPlaylist[model.recList].name), displayMode: .inline)
+        // ZStack
     }
 }
