@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct Record: View, Identifiable {
-    
-    @State var sliderValue = 0.0
-    
+        
     var id: Int
     var title: String
     var author: String

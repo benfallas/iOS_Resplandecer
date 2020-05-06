@@ -29,7 +29,7 @@ final class RecordListViewModel : ObservableObject {
 }
 
 struct RecordList: View {
-    @State var didTap: Bool = false
+    @State private var didTap: Bool = false
     @ObservedObject var model: RecordListViewModel
     
     var body: some View {

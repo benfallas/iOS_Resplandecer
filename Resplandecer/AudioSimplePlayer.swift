@@ -14,7 +14,7 @@ let globalPlayer = AudioSimplePlayer()
 
 class AudioSimplePlayer {
     
-    var player: AVPlayer?
+    private var player: AVPlayer?
     
     // Given the ID of song find URL by accessing Recording
     func play(urlString: String) {

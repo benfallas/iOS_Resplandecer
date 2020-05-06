@@ -12,7 +12,6 @@ struct recordingPlayButton<PlayRecord: View>: View{
     init(action: @escaping() -> Void, @ViewBuilder content: () -> PlayRecord){
         self.action = action
         self.content = content()
-        var buttonStatus: Bool = false
     }
     var body: some View{
         Button(action: action) {

@@ -15,7 +15,6 @@ class allRecords {
 
 class Queue{
     var currentPlayListIndex: Int
-    var list: [Record]
     var currnetPlayListSize: Int
     var startingPointIndex: Int
     
@@ -23,14 +22,12 @@ class Queue{
     
     init(){
         self.currentPlayListIndex = -1
-        self.list = []
         self.currnetPlayListSize = 0
         self.startingPointIndex = -1
         //        self.totalSize = 0
     }
     init(index: Int){
         self.currentPlayListIndex = index
-        self.list = totalRecs.allPlaylist[index].recordings
         self.currnetPlayListSize = totalRecs.allPlaylist[index].recordings.count
         self.startingPointIndex = -1
         //        self.totalSize = list.count
