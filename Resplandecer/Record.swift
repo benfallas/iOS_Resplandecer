@@ -42,13 +42,13 @@ struct Record: View, Identifiable {
                 }
             } .padding()
                 .foregroundColor(.white)
-                .background(Color.red)
+                .background(Color(red: 0.945, green: 0.317, blue: 0.337))
                 .font(.largeTitle)
                 .overlay( RoundedRectangle(cornerRadius: 50).stroke(Color.white, lineWidth: 4))
                 .clipShape(Circle()).position(x:0, y:50)      
         
         }.frame(width: 375, height: 100, alignment: .center)
-            .background(Color(red: 0.94, green: 0.85, blue: 0.85))
+            .background(Color.init(red: 0.992, green: 0.858, blue: 0.709))
         
     }
 }

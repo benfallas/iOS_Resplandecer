@@ -66,9 +66,9 @@ struct BigRadioButton: View {
 
 
 extension Color {
-    static let color1 = Color(red: 0.988, green: 0.361, blue: 0.361)
-    static let color2 = Color(red: 0.839, green: 0.180, blue: 0.180)
-    static let color3 = Color(red: 0.659, green: 0.035, blue: 0.035)
+    static let color1 = Color(red: 0.678, green: 0.0, blue: 0.066)
+    static let color2 = Color(red: 0.945, green: 0.317, blue: 0.337)
+    static let color3 = Color(red: 0.678, green: 0.0, blue: 0.066)
 }
 
 struct Arc : Shape {

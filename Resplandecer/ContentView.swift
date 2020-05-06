@@ -8,10 +8,15 @@
 
 import SwiftUI
 
+enum ActiveAlert {
+    case first, second
+}
+
 struct ContentView: View {
     @State var menuOpen: Bool = false
     @State private var didTap:Bool = false
-    
+    @State private var showAlert = false
+    @State private var activeAlert: ActiveAlert = .first
     @State var startAnimation = false
     
     @State private var outerArc: CGFloat = 80
@@ -22,12 +27,15 @@ struct ContentView: View {
     
     init() {
         UINavigationBar.appearance().backgroundColor = UIColor(red: 0.72, green: 0.05, blue: 0.04, alpha: 1)
-        
+        UITableView.appearance().backgroundColor = UIColor.init(red: 0.929, green: 0.933, blue: 0.788, alpha: 1)
+
     }
     
     var body: some View {
         NavigationView {
             ZStack {
+                Color.init(red: 0.929, green: 0.933, blue: 0.788)
+
                 VStack{
                     VStack(alignment: .center) {
                         //                        Button(action: {
@@ -47,10 +55,7 @@ struct ContentView: View {
                         //                                Image(systemName: "play.fill").frame(width: 120, height: 120)
                         //                            }
                         BigRadioButton(beginAnimation:self.beginAnimation, outer: outerArc, inner: innerArc, triWidth: triW,
-                                       circleWidth: 10 ,cicleHeight: 10).onTapGesture {
-                                        globalPlayer.signalPlayLiveRadio()
-                        }
-                        
+                                       circleWidth: 10 ,cicleHeight: 10)
                         
                         
                         Spacer().frame(height: 70)
@@ -75,30 +80,35 @@ struct ContentView: View {
                         
                         
                     }//vstack center
-                    HStack{
-                        Button(action: {
-                            print("Conctact us clicked!")
-                        }, label: {
-                            Text("¡Contáctanos!").foregroundColor(Color.white)
-                                .font(.headline)
-                                .frame(width: 150, height: 30)
-                                .background(Color(red: 0.72, green: 0.05, blue: 0.04))
-                                .shadow(radius: 25)
-                        })
+                    HStack {
+                        Button("¡Contáctanos!") {
+                            self.showAlert = true
+                            self.activeAlert = .first
+                            print("Contact us!")
+                        }.foregroundColor(Color.white)
+                        .font(.headline)
+                        .frame(width: 150, height: 30)
+                        .background(Color(red: 0.72, green: 0.05, blue: 0.04))
+                        .shadow(radius: 25)
+
                         
-                        Spacer().frame(width: 10)
-                        
-                        Button(action: {
-                            
-                        }, label: {
-                            Text("¡Localizanos!").foregroundColor(Color.white)
-                                .font(.headline)
-                                .frame(width: 150, height: 30)
-                                .background(Color(red: 0.72, green: 0.05, blue: 0.04))
-                                .shadow(radius: 25)
-                                .cornerRadius(5)
-                        })
-                    }//hstack
+                        Button("¡Localizanos!") {
+                            self.showAlert = true
+                            self.activeAlert = .second
+                            print("Locate us!")
+                        }.foregroundColor(Color.white)
+                            .font(.headline)
+                            .frame(width: 150, height: 30)
+                            .background(Color(red: 0.72, green: 0.05, blue: 0.04))
+                            .shadow(radius: 25)
+                    }.alert(isPresented: $showAlert) {
+                        switch activeAlert {
+                        case .first:
+                            return Alert(title: Text("¿PREGUNTAS?"), message: Text("Mandenos su pregunta o comentario via correo electrónico gmail: radioresplandecer93930@gmail.com. Estamos a su dispocision."))
+                        case .second:
+                            return Alert(title: Text("Para Mas Informacion"), message: Text("Iglesia De Jesucristo\n116 S. 3rd St.\nKing City, CA 93930\nTel. 831 386-9112"))
+                        }
+                    }
                 }//vstack
                 
                 
@@ -107,21 +117,12 @@ struct ContentView: View {
                          isOpen: self.menuOpen,
                          menuClose: self.openMenu)
                 
-            }
-            .navigationBarTitle("")
-                //*************************Menu Icon******************************
-                .navigationBarItems(leading:
-                    Button(action:
-                        {
-                            self.openMenu()
-                    }, label: {
-                        Image("redMenu")
-                            .renderingMode(Image.TemplateRenderingMode?.init(Image
-                                .TemplateRenderingMode.original))
-                            .resizable().frame(width:35, height:35).position(x: 10, y: 20)
-                    }
-                    )
-            )
+            }.navigationBarTitle("", displayMode: .inline).navigationBarItems(leading: Button(action: {
+                    self.openMenu();
+                    print("menu icon cliced!")
+                }, label: {
+                    Image("redMenu").resizable().frame(width:40, height:40)
+            }))
         }
     }
     func openMenu() {

@@ -78,9 +78,9 @@ struct MenuContent: View {
     @State var isPlayList_2_Presented = false
     @State var isPlayList_3_Presented = false
     
-    //    init() {
-    //        self.getRecordList()
-    //    }
+     init() {
+          UITableView.appearance().backgroundColor = UIColor.init(red: 0.945, green: 0.317, blue: 0.337, alpha: 1)
+      }
     
     var body: some View {
         List {
@@ -92,7 +92,7 @@ struct MenuContent: View {
                 self.isPlayList_1_Presented = false
                 self.isPlayList_2_Presented = false
                 self.isPlayList_3_Presented = false                
-            }
+            }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
             NavigationLink(destination: listOfPlayList[1], isActive: $isPlayList_1_Presented) {
                 Text("Himnos Del Pastor Valverde Sr")
             }.onTapGesture {
@@ -101,7 +101,7 @@ struct MenuContent: View {
                 self.isPlayList_1_Presented = true
                 self.isPlayList_2_Presented = false
                 self.isPlayList_3_Presented = false
-            }
+            }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
             NavigationLink(destination: listOfPlayList[2], isActive: $isPlayList_2_Presented) {
                 Text("La Voz Del Evangelio Eterno (Bilingue)")
             }.onTapGesture {
@@ -110,7 +110,7 @@ struct MenuContent: View {
                 self.isPlayList_1_Presented = false
                 self.isPlayList_2_Presented = true
                 self.isPlayList_3_Presented = false
-            }
+            }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
             NavigationLink(destination: listOfPlayList[3], isActive: $isPlayList_3_Presented) {
                 Text("Voz Que Clama En El Desierto")
             }.onTapGesture {
@@ -119,7 +119,7 @@ struct MenuContent: View {
                 self.isPlayList_1_Presented = false
                 self.isPlayList_2_Presented = false
                 self.isPlayList_3_Presented = true
-            }
+            }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
         }
     }
 }
