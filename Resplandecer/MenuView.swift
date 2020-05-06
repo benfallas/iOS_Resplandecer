@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import WebKit
 
 class allRecords {
     var allPlaylist:[Playlist] = []
@@ -120,6 +121,12 @@ struct MenuContent: View {
                 self.isPlayList_2_Presented = false
                 self.isPlayList_3_Presented = true
             }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
+            NavigationLink(destination: WebView(request: URLRequest(url: URL(string: "http://www.evalverde.com/index.php/es/")!))){
+                Text("VDEE")
+            }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
+            NavigationLink(destination: WebView(request: URLRequest(url: URL(string: "http://radioresplandecer.com/")!))){
+                Text("Nuestra Pagina Web")
+            }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
         }
     }
 }
@@ -183,7 +190,15 @@ struct SideMenuView: View {
     }
 }
 
-
+struct WebView: UIViewRepresentable{
+    let request: URLRequest
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        uiView.load(request)
+    }
+}
 
 
 struct SideMenuView_Previews: PreviewProvider {
