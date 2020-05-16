@@ -12,6 +12,7 @@ target 'Resplandecer' do
   pod 'Firebase/Database'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'SwiftSpinner'
 
 
 end

@@ -387,6 +387,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Resplandecer/Preview Content\"";
+				DEVELOPMENT_TEAM = PLSSXHS7MZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Resplandecer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -407,6 +408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Resplandecer/Preview Content\"";
+				DEVELOPMENT_TEAM = PLSSXHS7MZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Resplandecer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

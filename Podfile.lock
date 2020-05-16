@@ -282,6 +282,7 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - SwiftSpinner (2.1.0)
 
 DEPENDENCIES:
   - Firebase
@@ -290,6 +291,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Firestore
+  - SwiftSpinner
 
 SPEC REPOS:
   trunk:
@@ -314,6 +316,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - SwiftSpinner
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -337,7 +340,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  SwiftSpinner: 0f15c006307f8d8bbac075638927ec1361b565d7
 
-PODFILE CHECKSUM: 0438caaee8f3af9e055428885f7974305814a485
+PODFILE CHECKSUM: 2bd33a394fe6de78bc9359e0ee2425b9d50c30a9
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

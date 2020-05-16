@@ -9,20 +9,33 @@
 import Foundation
 import AVFoundation
 import Combine
+import SwiftSpinner
 
 let globalPlayer = AudioSimplePlayer()
 
-class AudioSimplePlayer {
+class AudioSimplePlayer : NSObject {
+    
+    private var isPlaybackBufferEmptyObserver: NSKeyValueObservation?
+    private var isPlaybackBufferFullObserver: NSKeyValueObservation?
+    private var isPlaybackLikelyToKeepUpObserver: NSKeyValueObservation?
     
     private var player: AVPlayer?
     
     // Given the ID of song find URL by accessing Recording
     func play(urlString: String) {
-        
+        SwiftSpinner.show("Cargando...")
+
         print("playing \(urlString)")
         
         guard let url = URL.init(string: urlString) else { return }
         let playerItem = AVPlayerItem.init(url: url)
+        
+        playerItem.addObserver(self, forKeyPath: "status",  options: .new, context: nil)
+
+              playerItem.addObserver(self, forKeyPath: "playbackBufferEmpty", options: .new, context: nil)
+              playerItem.addObserver(self, forKeyPath: "playbackLikelyToKeepUp", options: .new, context: nil)
+              playerItem.addObserver(self, forKeyPath: "playbackBufferFull", options: .new, context: nil)
+              observeBuffering(for: playerItem)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.playNext(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
         
@@ -35,8 +48,10 @@ class AudioSimplePlayer {
         } catch let error as NSError {
             self.player = nil
             print(error.localizedDescription)
+            SwiftSpinner.hide()
         } catch {
             print("AVAudioPlayer init failed")
+            SwiftSpinner.hide()
         }
     }
     
@@ -77,4 +92,72 @@ class AudioSimplePlayer {
         
         self.play(urlString: "http://107.215.165.202:8000/resplandecer?hash=1573611071190.mp3")
     }
+
+    override func observeValue(
+          forKeyPath keyPath: String?,
+          of object: Any?, change: [NSKeyValueChangeKey : Any]?,
+          context: UnsafeMutableRawPointer?) {
+
+          if keyPath == #keyPath(AVPlayerItem.status) {
+              let status: AVPlayerItem.Status
+              if let statusNumber = change?[.newKey] as? NSNumber {
+                  status = AVPlayerItem.Status(rawValue: statusNumber.intValue)!
+              } else {
+                  status = .unknown
+              }
+
+              // Switch over status value
+              switch status {
+              case .readyToPlay:
+                    print("observeValue readyToPlay: ");
+                    self.player?.play()
+                  SwiftSpinner.hide()
+                  break
+              case .failed:
+                  SwiftSpinner.show("No se pudo connectar a la internet", animated: false).addTapHandler ({
+                      SwiftSpinner.hide()
+                      }, subtitle: "Verifique su connexion y vuelva a intentar")
+                  break
+                  // Player item failed. See error.
+              case .unknown:
+                  SwiftSpinner.show("No se pudo connectar a la internet", animated: false).addTapHandler ({
+                  SwiftSpinner.hide()
+                  }, subtitle: "Vuelva a intentar")
+                  SwiftSpinner.hide()
+                  break
+              }
+          }
+      }
+      
+      private func observeBuffering(for playerItem: AVPlayerItem) {
+          isPlaybackBufferEmptyObserver = playerItem.observe(\.isPlaybackBufferEmpty, changeHandler: onIsPlaybackBufferEmptyObserverChanged)
+          isPlaybackBufferFullObserver = playerItem.observe(\.isPlaybackBufferFull, changeHandler: onIsPlaybackBufferFullObserverChanged)
+          isPlaybackLikelyToKeepUpObserver = playerItem.observe(\.isPlaybackLikelyToKeepUp, changeHandler: onIsPlaybackLikelyToKeepUpObserverChanged)
+      }
+      
+      private func onIsPlaybackBufferEmptyObserverChanged(playerItem: AVPlayerItem, change: NSKeyValueObservedChange<Bool>) {
+          if playerItem.isPlaybackBufferEmpty {
+              self.player?.pause()
+              
+              print("onIsPlaybackBufferEmptyObserverChanged isPlaybackBufferEmpty: ");
+              SwiftSpinner.show("Cargando...")
+          }
+      }
+
+      private func onIsPlaybackBufferFullObserverChanged(playerItem: AVPlayerItem, change: NSKeyValueObservedChange<Bool>) {
+          if playerItem.isPlaybackBufferFull {
+              
+              print("onIsPlaybackBufferFullObserverChanged isPlaybackBufferFull: ");
+              SwiftSpinner.hide()
+          }
+      }
+
+      private func onIsPlaybackLikelyToKeepUpObserverChanged(playerItem: AVPlayerItem, change: NSKeyValueObservedChange<Bool>) {
+          if playerItem.isPlaybackLikelyToKeepUp {
+              print("onIsPlaybackLikelyToKeepUpObserverChanged isPlaybackLikelyToKeepUp: ");
+
+              SwiftSpinner.hide()
+          }
+      }
+    
 }
