@@ -83,7 +83,7 @@ struct MenuContent: View {
     var body: some View {
         List {
             NavigationLink(destination: listOfPlayList[0], isActive: $isPlayList_0_Presented) {
-                Text("🎶 DeclaracionAlDia")
+                Text(" DeclaracionAlDia")
             }.onTapGesture {
                 currentPlayListIndex = 0
                 self.isPlayList_0_Presented = true
@@ -92,7 +92,7 @@ struct MenuContent: View {
                 self.isPlayList_3_Presented = false                
             }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
             NavigationLink(destination: listOfPlayList[1], isActive: $isPlayList_1_Presented) {
-                Text("🎶 Himnos Del Pastor Valverde Sr")
+                Text(" Himnos Del Pastor Valverde Sr")
             }.onTapGesture {
                 currentPlayListIndex = 1
                 self.isPlayList_0_Presented = false
@@ -101,7 +101,7 @@ struct MenuContent: View {
                 self.isPlayList_3_Presented = false
             }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
             NavigationLink(destination: listOfPlayList[2], isActive: $isPlayList_2_Presented) {
-                Text("🎶 La Voz Del Evangelio Eterno (Bilingue)")
+                Text(" Voz Que Clama En El Desierto ")
             }.onTapGesture {
                 currentPlayListIndex = 2
                 self.isPlayList_0_Presented = false
@@ -110,7 +110,7 @@ struct MenuContent: View {
                 self.isPlayList_3_Presented = false
             }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
             NavigationLink(destination: listOfPlayList[3], isActive: $isPlayList_3_Presented) {
-                Text("🎶 Voz Que Clama En El Desierto")
+                Text(" La Voz Del Evangelio Eterno (Bilingue)")
             }.onTapGesture {
                 currentPlayListIndex = 3
                 self.isPlayList_0_Presented = false
@@ -119,10 +119,10 @@ struct MenuContent: View {
                 self.isPlayList_3_Presented = true
             }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
             NavigationLink(destination: WebView(request: URLRequest(url: URL(string: "http://www.evalverde.com/index.php/es/")!))){
-                Text("🔗 VDEE")
+                Text("🔗 - VDEE")
             }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
             NavigationLink(destination: WebView(request: URLRequest(url: URL(string: "http://radioresplandecer.com/")!))){
-                Text("🔗 Nuestra Pagina Web")
+                Text("🔗 - Nuestra Pagina Web")
             }.listRowBackground(Color.init(red: 0.945, green: 0.317, blue: 0.337))
         }
     }

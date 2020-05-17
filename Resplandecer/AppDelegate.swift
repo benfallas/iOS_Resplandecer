@@ -9,6 +9,7 @@
 import SwiftUI
 import UIKit
 import Firebase
+import AVFoundation
 
 struct listLoadObj {
     @State var tempIsTapped: Bool = false
@@ -56,6 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch { }
+        
         FirebaseApp.configure()
         listLoadObj().getRecordList()
         return true
