@@ -10,9 +10,10 @@ target 'Resplandecer' do
   pod 'Firebase'
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
-  pod 'Firebase/Core'
+  pod 'Firebase/Core', ' ~> 6.15.0'
   pod 'Firebase/Firestore'
   pod 'SwiftSpinner'
+  pod 'Firebase/Crashlytics'
 
 
 end

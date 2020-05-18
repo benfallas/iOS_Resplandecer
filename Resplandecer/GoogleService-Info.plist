@@ -13,21 +13,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>iOS.Resplandecer</string>
+	<string>com.resplandecer.Resplandecer</string>
 	<key>PROJECT_ID</key>
 	<string>resplandecer-5b625</string>
 	<key>STORAGE_BUCKET</key>
 	<string>resplandecer-5b625.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:749748468319:ios:582cf323d878c2649df9ea</string>
 	<key>DATABASE_URL</key>
