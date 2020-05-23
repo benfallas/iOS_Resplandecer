@@ -21,7 +21,7 @@
 		D1364DC523F882C000C43CAA /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DC423F882C000C43CAA /* Playlist.swift */; };
 		D1A14D71241ECE54006960F0 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A14D70241ECE54006960F0 /* Record.swift */; };
 		D1A14D73241ED025006960F0 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A14D72241ED025006960F0 /* RecordList.swift */; };
-		DA63BBDF2473177200DD6B62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA63BBDE2473177200DD6B62 /* GoogleService-Info.plist */; };
+		DA63BBE22478D5E500DD6B62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA63BBE12478D5E500DD6B62 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +44,7 @@
 		D1A14D70241ECE54006960F0 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		D1A14D72241ED025006960F0 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
 		DA63BBDC24721E1B00DD6B62 /* Resplandecer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Resplandecer.entitlements; sourceTree = "<group>"; };
-		DA63BBDE2473177200DD6B62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DA63BBE02473192100DD6B62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA63BBE12478D5E500DD6B62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +97,7 @@
 		D1364DAD23F875E300C43CAA /* Resplandecer */ = {
 			isa = PBXGroup;
 			children = (
-				DA63BBDE2473177200DD6B62 /* GoogleService-Info.plist */,
+				DA63BBE12478D5E500DD6B62 /* GoogleService-Info.plist */,
 				DA63BBDC24721E1B00DD6B62 /* Resplandecer.entitlements */,
 				D1364DAE23F875E300C43CAA /* AppDelegate.swift */,
 				93F7BEA8245724C900EE3C20 /* AudioSimplePlayer.swift */,
@@ -110,7 +109,6 @@
 				D1364DB423F875F100C43CAA /* Assets.xcassets */,
 				D1364DB923F875F100C43CAA /* LaunchScreen.storyboard */,
 				D1364DBC23F875F100C43CAA /* Info.plist */,
-				DA63BBE02473192100DD6B62 /* GoogleService-Info.plist */,
 				D1364DB623F875F100C43CAA /* Preview Content */,
 				D1A14D70241ECE54006960F0 /* Record.swift */,
 				D1A14D72241ED025006960F0 /* RecordList.swift */,
@@ -189,7 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1364DBB23F875F100C43CAA /* LaunchScreen.storyboard in Resources */,
-				DA63BBDF2473177200DD6B62 /* GoogleService-Info.plist in Resources */,
+				DA63BBE22478D5E500DD6B62 /* GoogleService-Info.plist in Resources */,
 				D1364DB823F875F100C43CAA /* Preview Assets.xcassets in Resources */,
 				D1364DB523F875F100C43CAA /* Assets.xcassets in Resources */,
 			);
@@ -411,7 +409,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resplandecer/Resplandecer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.5;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Resplandecer/Preview Content\"";
 				DEVELOPMENT_TEAM = PLSSXHS7MZ;
 				ENABLE_PREVIEWS = YES;
@@ -420,7 +419,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.resplandecer.Resplandecer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -435,7 +434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resplandecer/Resplandecer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.5;
 				DEVELOPMENT_ASSET_PATHS = "\"Resplandecer/Preview Content\"";
 				DEVELOPMENT_TEAM = PLSSXHS7MZ;
 				ENABLE_PREVIEWS = YES;
@@ -444,7 +443,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.resplandecer.Resplandecer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
