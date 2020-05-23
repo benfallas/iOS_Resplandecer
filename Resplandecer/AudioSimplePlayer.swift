@@ -23,8 +23,6 @@ class AudioSimplePlayer : NSObject {
     
     // Given the ID of song find URL by accessing Recording
     func play(urlString: String) {
-        fatalError()
-
         SwiftSpinner.show("Cargando...")
 
         print("playing \(urlString)")
