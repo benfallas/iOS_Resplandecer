@@ -7,44 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93F7BEA9245724C900EE3C20 /* AudioSimplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7BEA8245724C900EE3C20 /* AudioSimplePlayer.swift */; };
-		93F7BEAB2457250800EE3C20 /* RecordingPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7BEAA2457250800EE3C20 /* RecordingPlayButton.swift */; };
 		ABE8D5B35ED39430972F2856 /* Pods_Resplandecer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */; };
-		C1B722AA245D0DB0005E133D /* BigRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B722A9245D0DB0005E133D /* BigRadioButton.swift */; };
 		D1364DAF23F875E300C43CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DAE23F875E300C43CAA /* AppDelegate.swift */; };
 		D1364DB123F875E300C43CAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DB023F875E300C43CAA /* SceneDelegate.swift */; };
-		D1364DB323F875E300C43CAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DB223F875E300C43CAA /* ContentView.swift */; };
 		D1364DB523F875F100C43CAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1364DB423F875F100C43CAA /* Assets.xcassets */; };
 		D1364DB823F875F100C43CAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1364DB723F875F100C43CAA /* Preview Assets.xcassets */; };
 		D1364DBB23F875F100C43CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1364DB923F875F100C43CAA /* LaunchScreen.storyboard */; };
-		D1364DC323F87CD200C43CAA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DC223F87CD200C43CAA /* MenuView.swift */; };
-		D1364DC523F882C000C43CAA /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1364DC423F882C000C43CAA /* Playlist.swift */; };
-		D1A14D71241ECE54006960F0 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A14D70241ECE54006960F0 /* Record.swift */; };
-		D1A14D73241ED025006960F0 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A14D72241ED025006960F0 /* RecordList.swift */; };
 		DA63BBE22478D5E500DD6B62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA63BBE12478D5E500DD6B62 /* GoogleService-Info.plist */; };
+		DACD853525B7C3C9000807A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACD853425B7C3C9000807A3 /* Main.storyboard */; };
+		DACD854725B7C3ED000807A3 /* VDEEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD853825B7C3E4000807A3 /* VDEEViewController.swift */; };
+		DACD854825B7C3ED000807A3 /* VDEEBilingueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD853A25B7C3E6000807A3 /* VDEEBilingueTableViewCell.swift */; };
+		DACD854925B7C3ED000807A3 /* VDEEBilingueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD853B25B7C3E6000807A3 /* VDEEBilingueTableViewController.swift */; };
+		DACD854A25B7C3ED000807A3 /* ResplandecerWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD853D25B7C3E8000807A3 /* ResplandecerWebViewController.swift */; };
+		DACD854B25B7C3ED000807A3 /* VQCEEDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD853F25B7C3EA000807A3 /* VQCEEDTableViewController.swift */; };
+		DACD854C25B7C3ED000807A3 /* VQCEEDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD854025B7C3EA000807A3 /* VQCEEDTableViewCell.swift */; };
+		DACD854D25B7C3ED000807A3 /* HimnarioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD854225B7C3EC000807A3 /* HimnarioTableViewCell.swift */; };
+		DACD854E25B7C3ED000807A3 /* HimnarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD854325B7C3EC000807A3 /* HimnarioTableViewController.swift */; };
+		DACD854F25B7C3ED000807A3 /* DeclaracionAlDiaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD854525B7C3ED000807A3 /* DeclaracionAlDiaTableViewController.swift */; };
+		DACD855025B7C3ED000807A3 /* DeclaracionAlDiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD854625B7C3ED000807A3 /* DeclaracionAlDiaTableViewCell.swift */; };
+		DACD855325B7C436000807A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD855225B7C436000807A3 /* ViewController.swift */; };
+		DACD855625B7C50B000807A3 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD855525B7C50B000807A3 /* MainTableViewCell.swift */; };
+		DACD855925B7C516000807A3 /* tItleContentBlocksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD855825B7C516000807A3 /* tItleContentBlocksTableViewController.swift */; };
+		DACD855C25B7C51D000807A3 /* AvPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD855B25B7C51C000807A3 /* AvPlayerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		52F212AC66C08733BD2928D9 /* Pods-Resplandecer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.release.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.release.xcconfig"; sourceTree = "<group>"; };
-		93F7BEA8245724C900EE3C20 /* AudioSimplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSimplePlayer.swift; sourceTree = "<group>"; };
-		93F7BEAA2457250800EE3C20 /* RecordingPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPlayButton.swift; sourceTree = "<group>"; };
 		A8E8DD140A97B1CCB1FDDDF8 /* Pods_Resplandecer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Resplandecer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1B722A9245D0DB0005E133D /* BigRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigRadioButton.swift; sourceTree = "<group>"; };
 		D1364DAB23F875E300C43CAA /* Resplandecer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resplandecer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1364DAE23F875E300C43CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1364DB023F875E300C43CAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D1364DB223F875E300C43CAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1364DB423F875F100C43CAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1364DB723F875F100C43CAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D1364DBA23F875F100C43CAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1364DBC23F875F100C43CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1364DC223F87CD200C43CAA /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		D1364DC423F882C000C43CAA /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		D147A11CA79A0E314BC49CC5 /* Pods-Resplandecer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resplandecer.debug.xcconfig"; path = "Target Support Files/Pods-Resplandecer/Pods-Resplandecer.debug.xcconfig"; sourceTree = "<group>"; };
-		D1A14D70241ECE54006960F0 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
-		D1A14D72241ED025006960F0 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
 		DA63BBDC24721E1B00DD6B62 /* Resplandecer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Resplandecer.entitlements; sourceTree = "<group>"; };
 		DA63BBE12478D5E500DD6B62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DACD853425B7C3C9000807A3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DACD853825B7C3E4000807A3 /* VDEEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDEEViewController.swift; sourceTree = "<group>"; };
+		DACD853A25B7C3E6000807A3 /* VDEEBilingueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDEEBilingueTableViewCell.swift; sourceTree = "<group>"; };
+		DACD853B25B7C3E6000807A3 /* VDEEBilingueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDEEBilingueTableViewController.swift; sourceTree = "<group>"; };
+		DACD853D25B7C3E8000807A3 /* ResplandecerWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResplandecerWebViewController.swift; sourceTree = "<group>"; };
+		DACD853F25B7C3EA000807A3 /* VQCEEDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VQCEEDTableViewController.swift; sourceTree = "<group>"; };
+		DACD854025B7C3EA000807A3 /* VQCEEDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VQCEEDTableViewCell.swift; sourceTree = "<group>"; };
+		DACD854225B7C3EC000807A3 /* HimnarioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HimnarioTableViewCell.swift; sourceTree = "<group>"; };
+		DACD854325B7C3EC000807A3 /* HimnarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HimnarioTableViewController.swift; sourceTree = "<group>"; };
+		DACD854525B7C3ED000807A3 /* DeclaracionAlDiaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclaracionAlDiaTableViewController.swift; sourceTree = "<group>"; };
+		DACD854625B7C3ED000807A3 /* DeclaracionAlDiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclaracionAlDiaTableViewCell.swift; sourceTree = "<group>"; };
+		DACD855225B7C436000807A3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DACD855525B7C50B000807A3 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		DACD855825B7C516000807A3 /* tItleContentBlocksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tItleContentBlocksTableViewController.swift; sourceTree = "<group>"; };
+		DACD855B25B7C51C000807A3 /* AvPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvPlayerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,22 +111,25 @@
 		D1364DAD23F875E300C43CAA /* Resplandecer */ = {
 			isa = PBXGroup;
 			children = (
+				DACD855B25B7C51C000807A3 /* AvPlayerManager.swift */,
+				DACD855825B7C516000807A3 /* tItleContentBlocksTableViewController.swift */,
+				DACD855525B7C50B000807A3 /* MainTableViewCell.swift */,
+				DACD855225B7C436000807A3 /* ViewController.swift */,
+				DACD854425B7C3ED000807A3 /* DeclaracionAlDia */,
+				DACD854125B7C3EC000807A3 /* Himnario */,
+				DACD853C25B7C3E8000807A3 /* ResplandecerWeb */,
+				DACD853725B7C3E4000807A3 /* VDEE */,
+				DACD853925B7C3E6000807A3 /* VDEEBilingue */,
+				DACD853E25B7C3EA000807A3 /* VQCEED */,
+				DACD853425B7C3C9000807A3 /* Main.storyboard */,
 				DA63BBE12478D5E500DD6B62 /* GoogleService-Info.plist */,
 				DA63BBDC24721E1B00DD6B62 /* Resplandecer.entitlements */,
 				D1364DAE23F875E300C43CAA /* AppDelegate.swift */,
-				93F7BEA8245724C900EE3C20 /* AudioSimplePlayer.swift */,
-				93F7BEAA2457250800EE3C20 /* RecordingPlayButton.swift */,
 				D1364DB023F875E300C43CAA /* SceneDelegate.swift */,
-				D1364DB223F875E300C43CAA /* ContentView.swift */,
-				D1364DC423F882C000C43CAA /* Playlist.swift */,
-				D1364DC223F87CD200C43CAA /* MenuView.swift */,
 				D1364DB423F875F100C43CAA /* Assets.xcassets */,
 				D1364DB923F875F100C43CAA /* LaunchScreen.storyboard */,
 				D1364DBC23F875F100C43CAA /* Info.plist */,
 				D1364DB623F875F100C43CAA /* Preview Content */,
-				D1A14D70241ECE54006960F0 /* Record.swift */,
-				D1A14D72241ED025006960F0 /* RecordList.swift */,
-				C1B722A9245D0DB0005E133D /* BigRadioButton.swift */,
 			);
 			path = Resplandecer;
 			sourceTree = "<group>";
@@ -123,6 +140,58 @@
 				D1364DB723F875F100C43CAA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DACD853725B7C3E4000807A3 /* VDEE */ = {
+			isa = PBXGroup;
+			children = (
+				DACD853825B7C3E4000807A3 /* VDEEViewController.swift */,
+			);
+			path = VDEE;
+			sourceTree = "<group>";
+		};
+		DACD853925B7C3E6000807A3 /* VDEEBilingue */ = {
+			isa = PBXGroup;
+			children = (
+				DACD853A25B7C3E6000807A3 /* VDEEBilingueTableViewCell.swift */,
+				DACD853B25B7C3E6000807A3 /* VDEEBilingueTableViewController.swift */,
+			);
+			path = VDEEBilingue;
+			sourceTree = "<group>";
+		};
+		DACD853C25B7C3E8000807A3 /* ResplandecerWeb */ = {
+			isa = PBXGroup;
+			children = (
+				DACD853D25B7C3E8000807A3 /* ResplandecerWebViewController.swift */,
+			);
+			path = ResplandecerWeb;
+			sourceTree = "<group>";
+		};
+		DACD853E25B7C3EA000807A3 /* VQCEED */ = {
+			isa = PBXGroup;
+			children = (
+				DACD853F25B7C3EA000807A3 /* VQCEEDTableViewController.swift */,
+				DACD854025B7C3EA000807A3 /* VQCEEDTableViewCell.swift */,
+			);
+			path = VQCEED;
+			sourceTree = "<group>";
+		};
+		DACD854125B7C3EC000807A3 /* Himnario */ = {
+			isa = PBXGroup;
+			children = (
+				DACD854225B7C3EC000807A3 /* HimnarioTableViewCell.swift */,
+				DACD854325B7C3EC000807A3 /* HimnarioTableViewController.swift */,
+			);
+			path = Himnario;
+			sourceTree = "<group>";
+		};
+		DACD854425B7C3ED000807A3 /* DeclaracionAlDia */ = {
+			isa = PBXGroup;
+			children = (
+				DACD854525B7C3ED000807A3 /* DeclaracionAlDiaTableViewController.swift */,
+				DACD854625B7C3ED000807A3 /* DeclaracionAlDiaTableViewCell.swift */,
+			);
+			path = DeclaracionAlDia;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1364DBB23F875F100C43CAA /* LaunchScreen.storyboard in Resources */,
+				DACD853525B7C3C9000807A3 /* Main.storyboard in Resources */,
 				DA63BBE22478D5E500DD6B62 /* GoogleService-Info.plist in Resources */,
 				D1364DB823F875F100C43CAA /* Preview Assets.xcassets in Resources */,
 				D1364DB523F875F100C43CAA /* Assets.xcassets in Resources */,
@@ -261,16 +331,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DACD855625B7C50B000807A3 /* MainTableViewCell.swift in Sources */,
+				DACD854825B7C3ED000807A3 /* VDEEBilingueTableViewCell.swift in Sources */,
+				DACD854925B7C3ED000807A3 /* VDEEBilingueTableViewController.swift in Sources */,
 				D1364DAF23F875E300C43CAA /* AppDelegate.swift in Sources */,
+				DACD854725B7C3ED000807A3 /* VDEEViewController.swift in Sources */,
 				D1364DB123F875E300C43CAA /* SceneDelegate.swift in Sources */,
-				93F7BEAB2457250800EE3C20 /* RecordingPlayButton.swift in Sources */,
-				D1A14D71241ECE54006960F0 /* Record.swift in Sources */,
-				93F7BEA9245724C900EE3C20 /* AudioSimplePlayer.swift in Sources */,
-				D1364DB323F875E300C43CAA /* ContentView.swift in Sources */,
-				C1B722AA245D0DB0005E133D /* BigRadioButton.swift in Sources */,
-				D1364DC323F87CD200C43CAA /* MenuView.swift in Sources */,
-				D1364DC523F882C000C43CAA /* Playlist.swift in Sources */,
-				D1A14D73241ED025006960F0 /* RecordList.swift in Sources */,
+				DACD855025B7C3ED000807A3 /* DeclaracionAlDiaTableViewCell.swift in Sources */,
+				DACD854F25B7C3ED000807A3 /* DeclaracionAlDiaTableViewController.swift in Sources */,
+				DACD855925B7C516000807A3 /* tItleContentBlocksTableViewController.swift in Sources */,
+				DACD854D25B7C3ED000807A3 /* HimnarioTableViewCell.swift in Sources */,
+				DACD854B25B7C3ED000807A3 /* VQCEEDTableViewController.swift in Sources */,
+				DACD854E25B7C3ED000807A3 /* HimnarioTableViewController.swift in Sources */,
+				DACD855325B7C436000807A3 /* ViewController.swift in Sources */,
+				DACD854A25B7C3ED000807A3 /* ResplandecerWebViewController.swift in Sources */,
+				DACD854C25B7C3ED000807A3 /* VQCEEDTableViewCell.swift in Sources */,
+				DACD855C25B7C51D000807A3 /* AvPlayerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

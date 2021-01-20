@@ -11,45 +11,6 @@ import UIKit
 import Firebase
 import AVFoundation
 
-struct listLoadObj {
-    @State var tempIsTapped: Bool = false
-    let db =  Database.database().reference();
-
-func getRecordList() {
-    db.child("13APXRHCpHma6fFJgci5iSCfzh-1uBP5HwzKbuZ-utH8").observeSingleEvent(of: .value, with: { (snapshot) in
-        // Get Database values
-        var i = 0
-        var playlistId = 0
-        var tempRec:[Record] = []
-        let value = snapshot.value as? NSDictionary
-        for(key, _) in (value)! {
-            print(key)
-            let del = value?[key] as? NSDictionary ?? nil
-            for (_, innerVal) in del ?? NSDictionary() {
-                let realValue = innerVal as! NSDictionary
-                if (realValue).count != 0 {
-                    if(key as! String == "DeclaracionAlDia") {
-                        let tempRecord =  Record(id: i, title: realValue["Titulo"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["Link"] as! String, isTapped: self.$tempIsTapped)
-                        tempRec.append(tempRecord)
-                    }else {
-                        let tempRecord =  Record(id: i, title: realValue["TITULO"] as! String, author: realValue["AUTOR"] as! String, radioURL: realValue["LINK"] as! String, isTapped: self.$tempIsTapped)
-                        tempRec.append(tempRecord)
-                        
-                    }
-                }
-                i += 1
-            }
-            i = 0
-            totalRecs.allPlaylist.append(Playlist(id: playlistId, name: key as! String, recordings: tempRec))
-            tempRec.removeAll()
-            playlistId = playlistId + 1
-        }
-    }) { (error) in
-        print(error.localizedDescription)
-    }
-}
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -63,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch { }
         
         FirebaseApp.configure()
-        listLoadObj().getRecordList()
         return true
     }
     
