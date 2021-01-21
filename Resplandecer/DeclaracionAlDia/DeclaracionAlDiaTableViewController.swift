@@ -113,7 +113,7 @@ class DeclaracionAlDiaTableViewController: UITableViewController {
         print("declaracionAlDia 2")
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "declaracionAlDiaTableViewCell", for: indexPath) as? DeclaracionAlDiaTableViewCell  else {
             print("error")
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not an instance of DeclaracionAlDiaTableViewCell.")
         }
         cell.authorLabel.numberOfLines = 0
         
@@ -132,7 +132,10 @@ class DeclaracionAlDiaTableViewController: UITableViewController {
         return cell
     }
     
-
+    deinit {
+        AvPlayerManager.manager.removeObserver()
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

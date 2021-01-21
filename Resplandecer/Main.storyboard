@@ -12,7 +12,7 @@
         <!--Itlec Content Blocks Table View Controller-->
         <scene sceneID="m1z-mC-vYn">
             <objects>
-                <tableViewController id="RUC-fp-CZy" customClass="tItlecContentBlocksTableViewController" customModule="RadioResplandecer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="RUC-fp-CZy" customClass="tItlecContentBlocksTableViewController" customModule="Resplandecer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KLQ-B6-orJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainTableViewCell" rowHeight="140" id="XuM-hb-lbJ" customClass="MainTableViewCell" customModule="RadioResplandecer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainTableViewCell" rowHeight="140" id="XuM-hb-lbJ" customClass="MainTableViewCell" customModule="Resplandecer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="552" width="414" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XuM-hb-lbJ" id="eRj-Ss-2MR">
@@ -140,13 +140,13 @@
         <!--Declaracion Al Dia Table View Controller-->
         <scene sceneID="fQc-Ek-FUd">
             <objects>
-                <tableViewController id="hI4-hG-lUx" customClass="DeclaracionAlDiaTableViewController" customModule="RadioResplandecer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hI4-hG-lUx" customClass="DeclaracionAlDiaTableViewController" customModule="Resplandecer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fyu-nW-UIA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="declaracionAlDiaTableViewCell" rowHeight="160" id="Kra-gg-vJ6" customClass="DeclaracionAlDiaTableViewCell" customModule="RadioResplandecer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="declaracionAlDiaTableViewCell" rowHeight="160" id="Kra-gg-vJ6" customClass="DeclaracionAlDiaTableViewCell" customModule="Resplandecer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kra-gg-vJ6" id="JXR-Ga-u8k">
@@ -156,8 +156,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDv-Ns-pQ0">
                                             <rect key="frame" x="0.0" y="0.0" width="94" height="160"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="94" id="5My-GF-b0Q"/>
-                                                <constraint firstAttribute="height" constant="160" id="sqv-bt-4m9"/>
+                                                <constraint firstAttribute="width" secondItem="iDv-Ns-pQ0" secondAttribute="height" multiplier="47:80" id="RJE-Yn-zZT"/>
                                             </constraints>
                                             <state key="normal" title="Play"/>
                                             <connections>
@@ -165,22 +164,19 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zD-ns-uWO">
-                                            <rect key="frame" x="94" y="11" width="300" height="67"/>
+                                            <rect key="frame" x="94" y="0.0" width="320" height="60"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="8JM-Ti-MS8"/>
-                                                <constraint firstAttribute="width" secondItem="3zD-ns-uWO" secondAttribute="height" multiplier="300:67" id="aNm-g4-S3x"/>
-                                                <constraint firstAttribute="height" constant="67" id="rbF-J3-POK"/>
+                                                <constraint firstAttribute="height" constant="60" id="Bte-uo-TMk"/>
+                                                <constraint firstAttribute="width" secondItem="3zD-ns-uWO" secondAttribute="height" multiplier="312:67" id="FMw-ox-4mA"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG6-O1-Ggc">
-                                            <rect key="frame" x="94" y="83" width="300" height="66"/>
+                                            <rect key="frame" x="94" y="100" width="320" height="60"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="66" id="39f-mc-1Uh"/>
-                                                <constraint firstAttribute="width" secondItem="ZG6-O1-Ggc" secondAttribute="height" multiplier="50:11" id="Q9l-ev-qgh"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="66" id="xRc-5Y-QMQ"/>
+                                                <constraint firstAttribute="height" constant="60" id="3uc-ag-uPK"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -192,15 +188,15 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="3zD-ns-uWO" firstAttribute="top" secondItem="JXR-Ga-u8k" secondAttribute="topMargin" id="3X1-ET-DWh"/>
-                                        <constraint firstItem="iDv-Ns-pQ0" firstAttribute="top" secondItem="JXR-Ga-u8k" secondAttribute="top" id="3g1-LK-8Jw"/>
-                                        <constraint firstItem="ZG6-O1-Ggc" firstAttribute="trailing" secondItem="JXR-Ga-u8k" secondAttribute="trailingMargin" id="KJz-ii-cau"/>
-                                        <constraint firstItem="ZG6-O1-Ggc" firstAttribute="bottom" secondItem="JXR-Ga-u8k" secondAttribute="bottomMargin" id="QYF-2u-ilC"/>
-                                        <constraint firstAttribute="bottom" secondItem="iDv-Ns-pQ0" secondAttribute="bottom" id="T2G-Ad-irv"/>
-                                        <constraint firstItem="iDv-Ns-pQ0" firstAttribute="leading" secondItem="JXR-Ga-u8k" secondAttribute="leading" id="WSx-xM-7AN"/>
-                                        <constraint firstItem="ZG6-O1-Ggc" firstAttribute="leading" secondItem="iDv-Ns-pQ0" secondAttribute="trailing" id="Z3m-5E-lJa"/>
-                                        <constraint firstItem="3zD-ns-uWO" firstAttribute="trailing" secondItem="JXR-Ga-u8k" secondAttribute="trailingMargin" id="eHo-1j-dE9"/>
-                                        <constraint firstItem="3zD-ns-uWO" firstAttribute="leading" secondItem="iDv-Ns-pQ0" secondAttribute="trailing" id="nLa-SA-Zx5"/>
+                                        <constraint firstItem="iDv-Ns-pQ0" firstAttribute="top" secondItem="JXR-Ga-u8k" secondAttribute="top" id="0hc-vA-SfH"/>
+                                        <constraint firstAttribute="trailing" secondItem="3zD-ns-uWO" secondAttribute="trailing" id="8rY-EU-XlI"/>
+                                        <constraint firstItem="3zD-ns-uWO" firstAttribute="top" secondItem="JXR-Ga-u8k" secondAttribute="top" id="E8x-Bo-LjW"/>
+                                        <constraint firstAttribute="bottom" secondItem="iDv-Ns-pQ0" secondAttribute="bottom" id="ZeA-nn-MTd"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZG6-O1-Ggc" secondAttribute="bottom" id="oZ7-VC-6Ab"/>
+                                        <constraint firstItem="3zD-ns-uWO" firstAttribute="leading" secondItem="iDv-Ns-pQ0" secondAttribute="trailing" id="rvH-Df-a0k"/>
+                                        <constraint firstItem="iDv-Ns-pQ0" firstAttribute="leading" secondItem="JXR-Ga-u8k" secondAttribute="leading" id="vhF-A4-qxh"/>
+                                        <constraint firstItem="ZG6-O1-Ggc" firstAttribute="leading" secondItem="iDv-Ns-pQ0" secondAttribute="trailing" id="wO2-zA-TOa"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZG6-O1-Ggc" secondAttribute="trailing" id="ztT-Mc-Zmq"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -219,18 +215,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oz0-cv-4jG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9" y="-1855"/>
+            <point key="canvasLocation" x="8.6956521739130448" y="-1855.5803571428571"/>
         </scene>
         <!--HimnarioTableViewController-->
         <scene sceneID="hNK-Oa-xJz">
             <objects>
-                <tableViewController id="NAA-Af-kVd" userLabel="HimnarioTableViewController" customClass="HimnarioTableViewController" customModule="RadioResplandecer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="NAA-Af-kVd" userLabel="HimnarioTableViewController" customClass="HimnarioTableViewController" customModule="Resplandecer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zAC-3z-oGW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="himnarioTableViewCellIdentifier" rowHeight="84" id="1V4-6d-VDu" customClass="HimnarioTableViewCell" customModule="RadioResplandecer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="himnarioTableViewCellIdentifier" rowHeight="84" id="1V4-6d-VDu" customClass="HimnarioTableViewCell" customModule="Resplandecer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1V4-6d-VDu" id="iQW-yi-AMw">
@@ -289,7 +285,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="uTW-5m-Lni">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="734"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="680"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gw-mN-gHe">
@@ -389,7 +385,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8dd-a1-8i8">
-                                <rect key="frame" x="0.0" y="762" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="708" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8dd-a1-8i8" id="8f0-La-n0J">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -427,7 +423,7 @@
         <!--VDEEViewController-->
         <scene sceneID="ZKj-xm-Xbl">
             <objects>
-                <viewController id="e1M-BU-u0m" userLabel="VDEEViewController" customClass="VDEEViewController" customModule="RadioResplandecer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e1M-BU-u0m" userLabel="VDEEViewController" customClass="VDEEViewController" customModule="Resplandecer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7uj-M0-WQn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -462,7 +458,7 @@
         <!--ResplandecerWebsite-->
         <scene sceneID="fHY-bg-1RG">
             <objects>
-                <viewController id="gsv-OK-z3b" userLabel="ResplandecerWebsite" customClass="ResplandecerWebViewController" customModule="RadioResplandecer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gsv-OK-z3b" userLabel="ResplandecerWebsite" customClass="ResplandecerWebViewController" customModule="Resplandecer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Rp-mn-Y1c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -497,13 +493,13 @@
         <!--VQCEEDViewController-->
         <scene sceneID="mK3-kV-Pwo">
             <objects>
-                <tableViewController id="H8q-HG-iVx" userLabel="VQCEEDViewController" customClass="VQCEEDTableViewController" customModule="RadioResplandecer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="H8q-HG-iVx" userLabel="VQCEEDViewController" customClass="VQCEEDTableViewController" customModule="Resplandecer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lKn-sC-JLQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VQCEEDTableViewCellIdentifier" rowHeight="120" id="HuA-CG-YTq" userLabel="VQCEEDTableViewCellIdentifier" customClass="VQCEEDTableViewCell" customModule="RadioResplandecer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VQCEEDTableViewCellIdentifier" rowHeight="120" id="HuA-CG-YTq" userLabel="VQCEEDTableViewCellIdentifier" customClass="VQCEEDTableViewCell" customModule="Resplandecer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HuA-CG-YTq" id="dk9-wA-yWY">
@@ -575,13 +571,13 @@
         <!--VDEEBilingueViewController-->
         <scene sceneID="lrQ-nC-HcN">
             <objects>
-                <tableViewController id="LE4-Lv-HyD" userLabel="VDEEBilingueViewController" customClass="VDEEBilingueTableViewController" customModule="RadioResplandecer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="LE4-Lv-HyD" userLabel="VDEEBilingueViewController" customClass="VDEEBilingueTableViewController" customModule="Resplandecer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bFA-00-TWk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VDEEBilingueTableViewCellIdentifier" rowHeight="84" id="Ldi-7Z-52R" userLabel="VDEEBilingueTableViewCellIdentifier" customClass="VDEEBilingueTableViewCell" customModule="RadioResplandecer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VDEEBilingueTableViewCellIdentifier" rowHeight="84" id="Ldi-7Z-52R" userLabel="VDEEBilingueTableViewCellIdentifier" customClass="VDEEBilingueTableViewCell" customModule="Resplandecer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ldi-7Z-52R" id="Uka-Bm-csu">

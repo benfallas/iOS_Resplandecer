@@ -97,7 +97,7 @@ class DeclaracionAlDiaTableViewCell: UITableViewCell {
         }
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+//    deinit {
+//        AvPlayerManager.manager.removeObserver()
+//    }
 }

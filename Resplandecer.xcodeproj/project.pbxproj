@@ -490,6 +490,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Resplandecer/Preview Content\"";
 				DEVELOPMENT_TEAM = PLSSXHS7MZ;
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = Resplandecer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -514,6 +515,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Resplandecer/Preview Content\"";
 				DEVELOPMENT_TEAM = PLSSXHS7MZ;
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = Resplandecer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

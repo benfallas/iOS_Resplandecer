@@ -74,5 +74,9 @@ class VDEEBilingueTableViewController: UITableViewController {
 
         return cell
     }
+    
+    deinit {
+        AvPlayerManager.manager.removeObserver()
+    }
 }
 

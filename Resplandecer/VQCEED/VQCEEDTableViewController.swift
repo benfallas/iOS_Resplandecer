@@ -89,5 +89,9 @@ class VQCEEDTableViewController: UITableViewController {
 
         return cell
     }
+    
+    deinit {
+        AvPlayerManager.manager.removeObserver()
+    }
 }
 

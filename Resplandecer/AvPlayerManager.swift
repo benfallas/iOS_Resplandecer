@@ -14,6 +14,7 @@ class AvPlayerManager {
     static let manager = AvPlayerManager()
     var playerItemContext = 0
     var currentUrl: URL?
+    var observer: NSObject?
     
     private init() {
         
@@ -38,6 +39,7 @@ class AvPlayerManager {
     var playerItem:AVPlayerItem?
 
     func loadMp3File(observer: NSObject, url : URL?) {
+        self.observer = observer
         print("loading file!!")
         currentUrl = url!
 
@@ -45,7 +47,7 @@ class AvPlayerManager {
         
         // Register as an observer of the player item's status property
             playerItem!.addObserver(observer,
-                                   forKeyPath: #keyPath(AVPlayerItem.status),
+                                   forKeyPath: "status",
                                    options: [.old, .new],
                                    context: &playerItemContext)
         
@@ -75,5 +77,14 @@ class AvPlayerManager {
     
     func getCurrentUrl() -> URL? {
         return currentUrl
+    }
+    
+    func removeObserver() {
+        if (playerItem != nil) {
+            if (self.observer != nil) {
+            playerItem!.removeObserver(self.observer!, forKeyPath: "status")
+            observer = nil
+            }
+        }
     }
 }
