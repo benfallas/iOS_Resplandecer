@@ -13,10 +13,17 @@ class DeclaracionAlDiaTableViewCell: UITableViewCell {
     
     private var playText = "Play"
     private var pauseText = "Pause"
+    
+    let loadingMessage = "cargando..."
+    let errorMessage = "Algo Salio Mal. Vuelva a intentarlo."
+    private var alert: UIAlertController?
+    
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!
     @IBOutlet var playPauseButton: UIButton!
+    
+
     
     var url: String = ""
     
@@ -25,7 +32,6 @@ class DeclaracionAlDiaTableViewCell: UITableViewCell {
         super.awakeFromNib()
         titleLabel.numberOfLines = 0
         authorLabel.numberOfLines = 0
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -44,6 +50,11 @@ class DeclaracionAlDiaTableViewCell: UITableViewCell {
                 print(newURL)
                 AvPlayerManager.manager.loadMp3File(observer: self, url: newURL)
                 AvPlayerManager.manager.play()
+                
+                alert = UIAlertController(title: nil, message: loadingMessage, preferredStyle: .alert)
+                if (alert != nil) {
+                    self.parentViewController!.present(alert!, animated: true)
+                }
             } else {
                 print("iddn't work")
             }
@@ -83,21 +94,43 @@ class DeclaracionAlDiaTableViewCell: UITableViewCell {
                     playPauseButton.setTitle(playText, for: .normal)
 
                 }
+                if (alert != nil) {
+                    alert!.dismiss(animated: true)
+                }
                 break
-                // Player item is ready to play.
             case .failed:
                 playPauseButton.setTitle(playText, for: .normal)
+                if (alert != nil) {
+                    alert!.dismiss(animated: true) { () -> Void in
 
+                        self.alert = UIAlertController(title: nil, message: self.errorMessage, preferredStyle: .alert)
+                        self.alert!.addAction(UIAlertAction(title: "Aceptar", style: .default) { (action:UIAlertAction!) in
+                            self.alert?.dismiss(animated: false)
+                                })
+                        
+                        self.parentViewController!.present(self.alert!, animated: false)
+
+                    }
+                    alert = nil
+                }
+                
                 break
-                // Player item failed. See error.
             case .unknown:
                 break
-                // Player item is not yet ready.
             }
         }
     }
-    
-//    deinit {
-//        AvPlayerManager.manager.removeObserver()
-//    }
+}
+
+extension UIView {
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.next
+            if parentResponder is UIViewController {
+                return parentResponder as? UIViewController
+            }
+        }
+        return nil
+    }
 }

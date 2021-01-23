@@ -14,6 +14,7 @@ target 'Resplandecer' do
   pod 'Firebase/Firestore'
   pod 'SwiftSpinner'
   pod 'Firebase/Crashlytics'
+  pod 'Toast-Swift', '~> 5.0.1'
 
 
 end

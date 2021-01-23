@@ -303,6 +303,7 @@ PODS:
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
   - SwiftSpinner (2.1.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Firebase
@@ -313,6 +314,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Firestore
   - SwiftSpinner
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -342,6 +344,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SwiftSpinner
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -370,7 +373,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SwiftSpinner: 0f15c006307f8d8bbac075638927ec1361b565d7
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 9ce775145102740cde135e4894c7d1292dfeeefe
+PODFILE CHECKSUM: e0934cdd25cb3486561498edf058c1e6dd6bb397
 
 COCOAPODS: 1.10.1

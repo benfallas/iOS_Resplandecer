@@ -15,6 +15,10 @@ class VDEEBilingueTableViewCell: UITableViewCell {
     private var playText = "Play"
     private var pauseText = "Pause"
     
+    let loadingMessage = "cargando..."
+    let errorMessage = "Algo Salio Mal. Vuelva a intentarlo."
+    private var alert: UIAlertController?
+    
     @IBOutlet var playPauseButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
     
@@ -22,17 +26,20 @@ class VDEEBilingueTableViewCell: UITableViewCell {
     var url: String = ""
 
     @IBAction func onPlayPauseButtonClicked(_ sender: Any) {
-        if (AvPlayerManager.manager.isPlaying() && AvPlayerManager.manager.getCurrentUrl()!.absoluteString == url) {
+        if (AvPlayerManager.manager.isPlaying()) {
             AvPlayerManager.manager.pause()
             playPauseButton.setTitle(playText, for: .normal)
         } else {
-            print("TRY loading")
             if let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
                let newURL = URL(string: encoded) {
 
-                print(newURL)
                 AvPlayerManager.manager.loadMp3File(observer: self, url: newURL)
                 AvPlayerManager.manager.play()
+                
+                alert = UIAlertController(title: nil, message: loadingMessage, preferredStyle: .alert)
+                if (alert != nil) {
+                    self.parentViewController!.present(alert!, animated: true)
+                }
             } else {
                 print("iddn't work")
             }
@@ -81,18 +88,29 @@ class VDEEBilingueTableViewCell: UITableViewCell {
             switch status {
             case .readyToPlay:
                 print("READY TO PLAY")
-                if (AvPlayerManager.manager.getCurrentUrl()?.absoluteString == self.url) {
-                    playPauseButton.setTitle(pauseText, for: .normal)
+                playPauseButton.setTitle(pauseText, for: .normal)
 
-                } else {
-                    playPauseButton.setTitle(playText, for: .normal)
-
+                if (alert != nil) {
+                    alert!.dismiss(animated: true)
                 }
                 break
                 // Player item is ready to play.
             case .failed:
                 playPauseButton.setTitle(playText, for: .normal)
 
+                if (alert != nil) {
+                    alert!.dismiss(animated: true) { () -> Void in
+
+                        self.alert = UIAlertController(title: nil, message: self.errorMessage, preferredStyle: .alert)
+                        self.alert!.addAction(UIAlertAction(title: "Aceptar", style: .default) { (action:UIAlertAction!) in
+                            self.alert?.dismiss(animated: false)
+                                })
+                        
+                        self.parentViewController!.present(self.alert!, animated: false)
+
+                    }
+                    alert = nil
+                }
                 break
                 // Player item failed. See error.
             case .unknown:

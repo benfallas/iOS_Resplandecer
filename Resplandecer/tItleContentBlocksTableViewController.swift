@@ -22,6 +22,12 @@ struct TitleContentBlocks {
 
 class tItlecContentBlocksTableViewController: UITableViewController {
     
+    let loadingMessage = "cargando..."
+    let errorMessage = "Algo Salio Mal. Vuelva a intentarlo."
+    private var alert: UIAlertController?
+    
+    
+    
     private var pressToPlayText: String = "Precione Para Escuchar Radio"
     private var youreListeningToText : String = "Estas Escuchando Radio Resplandecer"
     
@@ -38,11 +44,15 @@ class tItlecContentBlocksTableViewController: UITableViewController {
         if (AvPlayerManager.manager.isPlaying()) {
             AvPlayerManager.manager.pause()
             pressToPlayButton.setTitle(pressToPlayText, for: .normal)
+
         } else {
             AvPlayerManager.manager.loadMp3File(observer: self, url: URL(string: "http://107.215.165.202:8000/resplandecer?hash=1573611071190.mp3"))
             AvPlayerManager.manager.play()
+            alert = UIAlertController(title: nil, message: loadingMessage, preferredStyle: .alert)
+            if (alert != nil) {
+                self.present(alert!, animated: true)
+            }
         }
-        
     }
     
     override func observeValue(forKeyPath keyPath: String?,
@@ -71,10 +81,23 @@ class tItlecContentBlocksTableViewController: UITableViewController {
             switch status {
             case .readyToPlay:
                 pressToPlayButton.setTitle(youreListeningToText, for: .normal)
+                if (alert != nil) {
+                    alert!.dismiss(animated: true)
+                }
                 break
                 // Player item is ready to play.
             case .failed:
-                
+                if (alert != nil) {
+                    alert!.dismiss(animated: true) { () -> Void in
+                        self.alert = UIAlertController(title: nil, message: self.errorMessage, preferredStyle: .alert)
+                        self.alert!.addAction(UIAlertAction(title: "Aceptar", style: .default) { (action:UIAlertAction!) in
+                            self.alert?.dismiss(animated: false)
+                                })
+                        self.present(self.alert!, animated: false)
+
+                    }
+                    alert = nil
+                }
 
                 break
                 // Player item failed. See error.
@@ -93,7 +116,13 @@ class tItlecContentBlocksTableViewController: UITableViewController {
         request.httpMethod = "GET"
         
         NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {(response, data, error) in
-            guard let data = data else { return }
+            
+            
+            guard let data = data else {
+                self.loadingSpinner.stopAnimating()
+                return
+                
+            }
             var csvData = String(data: data, encoding: .utf8)!
             let parsedCSV: [String] = csvData.components(separatedBy: ",")
             
