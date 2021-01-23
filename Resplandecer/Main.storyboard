@@ -137,7 +137,7 @@
             </objects>
             <point key="canvasLocation" x="-988" y="-101"/>
         </scene>
-        <!--Declaracion Al Dia Table View Controller-->
+        <!--Declaracion Al Dia-->
         <scene sceneID="fQc-Ek-FUd">
             <objects>
                 <tableViewController id="hI4-hG-lUx" customClass="DeclaracionAlDiaTableViewController" customModule="Resplandecer" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,7 +211,7 @@
                             <outlet property="delegate" destination="hI4-hG-lUx" id="r9T-F3-dgq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="p3y-il-HQe"/>
+                    <navigationItem key="navigationItem" title="Declaracion Al Dia" id="p3y-il-HQe"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oz0-cv-4jG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,7 +270,7 @@
                             <outlet property="delegate" destination="NAA-Af-kVd" id="rjd-KY-rrZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Mcb-Ez-wZO"/>
+                    <navigationItem key="navigationItem" title="Valverde Sr Himnos" id="Mcb-Ez-wZO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRx-ko-NtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -285,7 +285,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="uTW-5m-Lni">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="680"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="626"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gw-mN-gHe">
@@ -385,7 +385,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8dd-a1-8i8">
-                                <rect key="frame" x="0.0" y="708" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="654" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8dd-a1-8i8" id="8f0-La-n0J">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -446,7 +446,7 @@
                             <constraint firstItem="Qez-UW-lHW" firstAttribute="bottom" secondItem="PaT-a4-T89" secondAttribute="bottom" id="QoH-Ic-We0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="I7f-NZ-7I1"/>
+                    <navigationItem key="navigationItem" title="VDEE" id="I7f-NZ-7I1"/>
                     <connections>
                         <outlet property="webView" destination="PaT-a4-T89" id="u8l-76-YOo"/>
                     </connections>
@@ -481,7 +481,7 @@
                             <constraint firstItem="RGU-eH-OgU" firstAttribute="top" secondItem="mAj-1q-AP2" secondAttribute="top" id="x9R-Ye-vnP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="acE-5u-PxL"/>
+                    <navigationItem key="navigationItem" title="Resplandecer" id="acE-5u-PxL"/>
                     <connections>
                         <outlet property="webView" destination="RGU-eH-OgU" id="PRI-n5-AjE"/>
                     </connections>
@@ -562,7 +562,7 @@
                             <outlet property="delegate" destination="H8q-HG-iVx" id="rNa-PB-4Oa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="k6E-fj-2iP"/>
+                    <navigationItem key="navigationItem" title="VQCEED" id="k6E-fj-2iP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXP-aV-7bd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -621,7 +621,7 @@
                             <outlet property="delegate" destination="LE4-Lv-HyD" id="vt0-Ex-cn0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Viu-91-px3"/>
+                    <navigationItem key="navigationItem" title="VDEE Bilingue" id="Viu-91-px3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGi-UJ-H9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
