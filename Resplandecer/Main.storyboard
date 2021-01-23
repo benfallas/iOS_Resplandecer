@@ -436,6 +436,10 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zmf-Yd-iq3">
+                                <rect key="frame" x="0.0" y="284" width="414" height="274"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qez-UW-lHW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -448,6 +452,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="VDEE" id="I7f-NZ-7I1"/>
                     <connections>
+                        <outlet property="loadingSpinner" destination="zmf-Yd-iq3" id="RrJ-cy-zed"/>
                         <outlet property="webView" destination="PaT-a4-T89" id="u8l-76-YOo"/>
                     </connections>
                 </viewController>
@@ -463,6 +468,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qqJ-PB-FGq">
+                                <rect key="frame" x="0.0" y="280" width="414" height="274"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGU-eH-OgU">
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -483,12 +492,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Resplandecer" id="acE-5u-PxL"/>
                     <connections>
+                        <outlet property="loadingSpinner" destination="qqJ-PB-FGq" id="AlZ-rf-d4S"/>
                         <outlet property="webView" destination="RGU-eH-OgU" id="PRI-n5-AjE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfT-or-eld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2148" y="-2590"/>
+            <point key="canvasLocation" x="-2150.7246376811595" y="-2590.1785714285711"/>
         </scene>
         <!--VQCEEDViewController-->
         <scene sceneID="mK3-kV-Pwo">

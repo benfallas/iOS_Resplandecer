@@ -23,10 +23,7 @@ class DeclaracionAlDiaTableViewCell: UITableViewCell {
     @IBOutlet var authorLabel: UILabel!
     @IBOutlet var playPauseButton: UIButton!
     
-
-    
     var url: String = ""
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
