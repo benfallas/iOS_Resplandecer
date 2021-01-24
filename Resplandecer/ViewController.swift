@@ -34,7 +34,7 @@ class ViewController: UIViewController {
                     title = parsedCSV[i]
                     context = parsedCSV[i + 1]
                 }
-        
+                
                 
                 print("title: " + title)
                 print("context: " + context)

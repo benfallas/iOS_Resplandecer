@@ -27,88 +27,19 @@ class tItlecContentBlocksTableViewController: UITableViewController {
     private var alert: UIAlertController?
     
     
-    private var pressToPlayText: String = "Precione Para Escuchar Radio"
+    private var pressToPlayText: String = "Precione Para Escuchar"
     private var youreListeningToText : String = "Estas Escuchando Radio Resplandecer"
     
     private var playerItemContext = 0
-    @IBOutlet var pressToPlayButton: UIButton!
     
     @IBOutlet var loadingSpinner: UIActivityIndicatorView!
     
     var titleAndContents = [TitleContentBlocks]()
 
-    @IBAction func onPlayRadioClicked(_ sender: Any) {        
-        if (AvPlayerManager.manager.isPlaying()) {
-            AvPlayerManager.manager.pause()
-            pressToPlayButton.setTitle(pressToPlayText, for: .normal)
-
-        } else {
-            AvPlayerManager.manager.loadMp3File(observer: self, url: URL(string: "http://107.215.165.202:8000/resplandecer?hash=1573611071190.mp3"))
-            AvPlayerManager.manager.play()
-            alert = UIAlertController(title: nil, message: loadingMessage, preferredStyle: .alert)
-            if (alert != nil) {
-                self.present(alert!, animated: true)
-            }
-        }
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?,
-                               of object: Any?,
-                               change: [NSKeyValueChangeKey : Any]?,
-                               context: UnsafeMutableRawPointer?) {
-
-        // Only handle observations for the playerItemContext
-        guard context == &AvPlayerManager.manager.self.playerItemContext else {
-            super.observeValue(forKeyPath: keyPath,
-                               of: object,
-                               change: change,
-                               context: context)
-            return
-        }
-
-        if keyPath == #keyPath(AVPlayerItem.status) {
-            let status: AVPlayerItem.Status
-            if let statusNumber = change?[.newKey] as? NSNumber {
-                status = AVPlayerItem.Status(rawValue: statusNumber.intValue)!
-            } else {
-                status = .unknown
-            }
-
-            switch status {
-            
-            case .readyToPlay:
-                pressToPlayButton.setTitle(youreListeningToText, for: .normal)
-                if (alert != nil) {
-                    alert!.dismiss(animated: true)
-                }
-                break
-                
-            case .failed:
-                if (alert != nil) {
-                    alert!.dismiss(animated: true) { () -> Void in
-                        self.alert = UIAlertController(title: nil, message: self.errorMessage, preferredStyle: .alert)
-                        self.alert!.addAction(UIAlertAction(title: "Aceptar", style: .default) { (action:UIAlertAction!) in
-                            self.alert?.dismiss(animated: false)
-                                })
-                        self.present(self.alert!, animated: false)
-
-                    }
-                    alert = nil
-                }
-                break
-                
-            case .unknown:
-                break
-            @unknown default:
-                break
-            }
-        }
-    }
-    
     
     private func loadSampleData() {
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3HsRGiTn6Lu7ie99Gh85WSpmT4aOXv9mNw2n49_5eFUbEnPPpbpaAtj7Qphj4wMd8WfaFofaTVv8H/pub?gid=939886657&single=true&output=csv")! as URL)
+        let request = NSMutableURLRequest(url: NSURL(string: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3HsRGiTn6Lu7ie99Gh85WSpmT4aOXv9mNw2n49_5eFUbEnPPpbpaAtj7Qphj4wMd8WfaFofaTVv8H/pub?gid=1638222395&single=true&output=csv")! as URL)
         let session = URLSession.shared
         request.httpMethod = "GET"
         
@@ -118,8 +49,8 @@ class tItlecContentBlocksTableViewController: UITableViewController {
                 guard let data = data else { return }
                 let csvData = String(data: data, encoding: .utf8)!
                 let parsedCSV: [String] = csvData.components(separatedBy: ",")
-                            
-                for i in 5..<parsedCSV.count  {
+                print(parsedCSV)
+                for i in 3..<parsedCSV.count  {
                     var title = ""
                     var context = ""
                     
@@ -135,6 +66,7 @@ class tItlecContentBlocksTableViewController: UITableViewController {
                 }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.loadingSpinner.stopAnimating()
                 }
             }
         })
@@ -145,8 +77,6 @@ class tItlecContentBlocksTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pressToPlayButton.setTitle(pressToPlayText, for: .normal)
-        
         loadSampleData()
     }
 
@@ -170,8 +100,19 @@ class tItlecContentBlocksTableViewController: UITableViewController {
        
         let contentData = titleAndContents[indexPath.row]
         
-        cell.titleViewCell.text = contentData.title
-        cell.contentViewCell.text = contentData.content
+        if (contentData.title == "ESTACION PRINCIPAL") {
+            cell.backgroundColor = UIColor .systemRed
+            cell.contentViewCell.text = pressToPlayText
+            cell.radioStation = contentData.content
+            cell.titleViewCell.text = "Radio Resplandecer"
+
+            cell.contentViewCell.textAlignment = .center
+            cell.contentViewCell.layoutIfNeeded()
+        } else {
+            cell.titleViewCell.text = contentData.title
+            cell.contentViewCell.text = contentData.content
+
+        }
 
         return cell
     }
