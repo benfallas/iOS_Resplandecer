@@ -15,45 +15,37 @@ class VQCEEDTableViewController: UITableViewController {
     var vqceedTracks = [MusicTrack]()
     
     private func loadSampleData() {
+        let request = NSMutableURLRequest(url: NSURL(string: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3HsRGiTn6Lu7ie99Gh85WSpmT4aOXv9mNw2n49_5eFUbEnPPpbpaAtj7Qphj4wMd8WfaFofaTVv8H/pub?gid=1203218903&single=true&output=csv")! as URL)
         
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3HsRGiTn6Lu7ie99Gh85WSpmT4aOXv9mNw2n49_5eFUbEnPPpbpaAtj7Qphj4wMd8WfaFofaTVv8H/pub?gid=1203218903&single=true&output=csv")!
-        var request = URLRequest(url: url)
+        let session = URLSession.shared
         request.httpMethod = "GET"
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {(response, data, error) in
-            guard let data = data else { return }
-            var csvData = String(data: data, encoding: .utf8)!
-            let parsedCSV: [String] = csvData.components(separatedBy: ",")
-                        
-            for i in stride(from: 7, to: parsedCSV.count - 3, by: 3)  {
-                var title = ""
-                var subtitle = ""
-                var url = ""
-                
-                title = parsedCSV[i]
-                url = parsedCSV[i + 1]
-                subtitle = parsedCSV[i + 2]
-                
-        
-                print("Title")
-                print(title)
-                print("Subtitle")
-                print(subtitle)
-                print("URL")
-                print(url)
-                
-                
-            
-                let stuff = MusicTrack(title: title, subtitle: subtitle, url: url)
-                print("STUFF")
-                print(stuff)
-                self.vqceedTracks += [stuff]
-                print(self.vqceedTracks)
-            }
-            
-            self.tableView.reloadData()
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
+            DispatchQueue.global(qos: .background).async {
 
-        }
+                guard let data = data else { return }
+                let csvData = String(data: data, encoding: .utf8)!
+                let parsedCSV: [String] = csvData.components(separatedBy: ",")
+                            
+                for i in stride(from: 7, to: parsedCSV.count - 2, by: 3)  {
+                    var title = ""
+                    var subtitle = ""
+                    var url = ""
+                    
+                    title = parsedCSV[i]
+                    url = parsedCSV[i + 1]
+                    subtitle = parsedCSV[i + 2]
+                
+                    let stuff = MusicTrack(title: title, subtitle: subtitle, url: url)
+                    self.vqceedTracks += [stuff]
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        })
+        self.tableView.reloadData()
+        task.resume()
     }
     
     override func viewDidLoad() {

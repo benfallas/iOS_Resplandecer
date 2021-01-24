@@ -15,53 +15,38 @@ class AvPlayerManager {
     var playerItemContext = 0
     var currentUrl: URL?
     var observer: NSObject?
+    var player:AVPlayer?
+    var playerItem:AVPlayerItem?
     
     private init() {
-        
         do {
             try AVAudioSession.sharedInstance()
                                   .setCategory(AVAudioSession.Category.playback)
-            print("AVAudioSession Category Playback OK")
             do {
                 try AVAudioSession.sharedInstance().setActive(true)
-                print("AVAudioSession is Active")
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-        
-        
+            } catch _ as NSError { }
+        } catch _ as NSError { }
+
     }
     
-    var player:AVPlayer?
-    var playerItem:AVPlayerItem?
-
     func loadMp3File(observer: NSObject, url : URL?) {
         self.observer = observer
-        print("loading file!!")
         currentUrl = url!
-
         playerItem = AVPlayerItem(url: url!)
         
-        // Register as an observer of the player item's status property
-            playerItem!.addObserver(observer,
+        playerItem!.addObserver(observer,
                                    forKeyPath: "status",
                                    options: [.old, .new],
                                    context: &playerItemContext)
         
         player = AVPlayer(playerItem: playerItem)
-        
     }
     
     func play()  {
         player!.play()
-        print("playing!!")
     }
     
     func pause() {
-        print("pausing!!")
         player?.pause()
         player = nil
     }
@@ -70,7 +55,6 @@ class AvPlayerManager {
     func isPlaying() -> Bool {
         if (player != nil) {
             return player!.rate != 0 && player!.error == nil
-
         }
         return false
     }
@@ -82,8 +66,8 @@ class AvPlayerManager {
     func removeObserver() {
         if (playerItem != nil) {
             if (self.observer != nil) {
-            playerItem!.removeObserver(self.observer!, forKeyPath: "status")
-            observer = nil
+                playerItem!.removeObserver(self.observer!, forKeyPath: "status")
+                observer = nil
             }
         }
     }

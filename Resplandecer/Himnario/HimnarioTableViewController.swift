@@ -15,35 +15,39 @@ class HimnarioTableViewController: UITableViewController {
     var himnarioTracks = [MusicTrack]()
     
     private func loadSampleData() {
+        let request = NSMutableURLRequest(url: NSURL(string: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3HsRGiTn6Lu7ie99Gh85WSpmT4aOXv9mNw2n49_5eFUbEnPPpbpaAtj7Qphj4wMd8WfaFofaTVv8H/pub?gid=902385560&single=true&output=csv")! as URL)
         
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3HsRGiTn6Lu7ie99Gh85WSpmT4aOXv9mNw2n49_5eFUbEnPPpbpaAtj7Qphj4wMd8WfaFofaTVv8H/pub?gid=902385560&single=true&output=csv")!
-        var request = URLRequest(url: url)
+        let session = URLSession.shared
         request.httpMethod = "GET"
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {(response, data, error) in
-            guard let data = data else { return }
-            var csvData = String(data: data, encoding: .utf8)!
-            let parsedCSV: [String] = csvData.components(separatedBy: ",")
-                        
-            for i in stride(from: 7, to: parsedCSV.count - 3, by: 3)  {
-                var title = ""
-                var subtitle = ""
-                var url = ""
-                
-                title = parsedCSV[i]
-                url = parsedCSV[i + 1]
-                subtitle = parsedCSV[i + 2]
-                
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
             
-                let stuff = MusicTrack(title: title, subtitle: subtitle, url: url)
-                self.himnarioTracks += [stuff]
-            }
-            
-            self.tableView.reloadData()
+            DispatchQueue.global(qos: .background).async {
 
-        }
-        
+                guard let data = data else { return }
+                let csvData = String(data: data, encoding: .utf8)!
+                let parsedCSV: [String] = csvData.components(separatedBy: ",")
+                            
+                for i in stride(from: 7, to: parsedCSV.count - 2, by: 3)  {
+                    var title = ""
+                    var subtitle = ""
+                    var url = ""
+                    
+                    title = parsedCSV[i]
+                    url = parsedCSV[i + 1]
+                    subtitle = parsedCSV[i + 2]
+                
+                    let stuff = MusicTrack(title: title, subtitle: subtitle, url: url)
+                    self.himnarioTracks += [stuff]
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        })
         self.tableView.reloadData()
+        task.resume()
+
     }
     
     override func viewDidLoad() {

@@ -27,7 +27,6 @@ class tItlecContentBlocksTableViewController: UITableViewController {
     private var alert: UIAlertController?
     
     
-    
     private var pressToPlayText: String = "Precione Para Escuchar Radio"
     private var youreListeningToText : String = "Estas Escuchando Radio Resplandecer"
     
@@ -38,9 +37,7 @@ class tItlecContentBlocksTableViewController: UITableViewController {
     
     var titleAndContents = [TitleContentBlocks]()
 
-    @IBAction func onPlayRadioClicked(_ sender: Any) {
-        print("clicked!")
-        
+    @IBAction func onPlayRadioClicked(_ sender: Any) {        
         if (AvPlayerManager.manager.isPlaying()) {
             AvPlayerManager.manager.pause()
             pressToPlayButton.setTitle(pressToPlayText, for: .normal)
@@ -77,15 +74,15 @@ class tItlecContentBlocksTableViewController: UITableViewController {
                 status = .unknown
             }
 
-            // Switch over status value
             switch status {
+            
             case .readyToPlay:
                 pressToPlayButton.setTitle(youreListeningToText, for: .normal)
                 if (alert != nil) {
                     alert!.dismiss(animated: true)
                 }
                 break
-                // Player item is ready to play.
+                
             case .failed:
                 if (alert != nil) {
                     alert!.dismiss(animated: true) { () -> Void in
@@ -98,12 +95,12 @@ class tItlecContentBlocksTableViewController: UITableViewController {
                     }
                     alert = nil
                 }
-
                 break
-                // Player item failed. See error.
+                
             case .unknown:
                 break
-                // Player item is not yet ready.
+            @unknown default:
+                break
             }
         }
     }
@@ -111,43 +108,39 @@ class tItlecContentBlocksTableViewController: UITableViewController {
     
     private func loadSampleData() {
         
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3HsRGiTn6Lu7ie99Gh85WSpmT4aOXv9mNw2n49_5eFUbEnPPpbpaAtj7Qphj4wMd8WfaFofaTVv8H/pub?gid=939886657&single=true&output=csv")!
-        var request = URLRequest(url: url)
+        let request = NSMutableURLRequest(url: NSURL(string: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3HsRGiTn6Lu7ie99Gh85WSpmT4aOXv9mNw2n49_5eFUbEnPPpbpaAtj7Qphj4wMd8WfaFofaTVv8H/pub?gid=939886657&single=true&output=csv")! as URL)
+        let session = URLSession.shared
         request.httpMethod = "GET"
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {(response, data, error) in
-            
-            
-            guard let data = data else {
-                self.loadingSpinner.stopAnimating()
-                return
-                
-            }
-            var csvData = String(data: data, encoding: .utf8)!
-            let parsedCSV: [String] = csvData.components(separatedBy: ",")
-            
-            
-            for i in 5..<parsedCSV.count  {
-                var title = ""
-                var context = ""
-                
-                if (i % 2 != 0) {
-                    title = parsedCSV[i]
-                    context = parsedCSV[i + 1]
-                }
-        
-                
-                
-                if (!title.isEmpty && !context.isEmpty) {
-                    let stuff = TitleContentBlocks(title: title, content: context)
-                    self.titleAndContents += [stuff]
-                }
-            }
-            
-            self.tableView.reloadData()
-            self.loadingSpinner.stopAnimating()
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
+            DispatchQueue.global(qos: .background).async {
 
-        }
+                guard let data = data else { return }
+                let csvData = String(data: data, encoding: .utf8)!
+                let parsedCSV: [String] = csvData.components(separatedBy: ",")
+                            
+                for i in 5..<parsedCSV.count  {
+                    var title = ""
+                    var context = ""
+                    
+                    if (i % 2 != 0) {
+                        title = parsedCSV[i]
+                        context = parsedCSV[i + 1]
+                    }
+        
+                    if (!title.isEmpty && !context.isEmpty) {
+                        let stuff = TitleContentBlocks(title: title, content: context)
+                        self.titleAndContents += [stuff]
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        })
+        self.tableView.reloadData()
+        
+        task.resume()
     }
     
     override func viewDidLoad() {
