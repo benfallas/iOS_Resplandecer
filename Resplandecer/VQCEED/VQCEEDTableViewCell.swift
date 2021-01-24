@@ -53,7 +53,6 @@ class VQCEEDTableViewCell: UITableViewCell {
                     self.parentViewController!.present(alert!, animated: true)
                 }
             } else {
-                print("iddn't work")
             }
         }
     }
@@ -84,7 +83,6 @@ class VQCEEDTableViewCell: UITableViewCell {
             // Switch over status value
             switch status {
             case .readyToPlay:
-                print("READY TO PLAY")
                 playPauseButton.setTitle(pauseText, for: .normal)
 
                 if (alert != nil) {
@@ -111,6 +109,8 @@ class VQCEEDTableViewCell: UITableViewCell {
                 break
             case .unknown:
                 break
+            @unknown default:
+                break;
             }
         }
     }

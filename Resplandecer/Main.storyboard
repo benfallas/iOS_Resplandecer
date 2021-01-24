@@ -169,7 +169,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author jjj jjkj kkk kkkk kkkk kkkk nn nnnn nnnnn nnnnn nnnnn " textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG6-O1-Ggc">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG6-O1-Ggc">
                                             <rect key="frame" x="104" y="68" width="310" height="74"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="ZG6-O1-Ggc" secondAttribute="height" multiplier="31:2" id="sCi-Cd-e6J"/>

@@ -40,11 +40,9 @@ class DeclaracionAlDiaTableViewCell: UITableViewCell {
             AvPlayerManager.manager.pause()
             playPauseButton.setTitle(playText, for: .normal)
         } else {
-            print("TRY loading")
             if let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
                let newURL = URL(string: encoded) {
                 
-                print(newURL)
                 AvPlayerManager.manager.loadMp3File(observer: self, url: newURL)
                 AvPlayerManager.manager.play()
                 
@@ -53,7 +51,6 @@ class DeclaracionAlDiaTableViewCell: UITableViewCell {
                     self.parentViewController!.present(alert!, animated: true)
                 }
             } else {
-                print("iddn't work")
             }
         }
     }
@@ -82,19 +79,18 @@ class DeclaracionAlDiaTableViewCell: UITableViewCell {
 
             // Switch over status value
             switch status {
+            
             case .readyToPlay:
-                print("READY TO PLAY")
                 if (AvPlayerManager.manager.getCurrentUrl()?.absoluteString == self.url) {
                     playPauseButton.setTitle(pauseText, for: .normal)
-
                 } else {
                     playPauseButton.setTitle(playText, for: .normal)
-
                 }
                 if (alert != nil) {
                     alert!.dismiss(animated: true)
                 }
                 break
+                
             case .failed:
                 playPauseButton.setTitle(playText, for: .normal)
                 if (alert != nil) {
@@ -104,16 +100,16 @@ class DeclaracionAlDiaTableViewCell: UITableViewCell {
                         self.alert!.addAction(UIAlertAction(title: "Aceptar", style: .default) { (action:UIAlertAction!) in
                             self.alert?.dismiss(animated: false)
                                 })
-                        
                         self.parentViewController!.present(self.alert!, animated: false)
-
                     }
                     alert = nil
                 }
-                
                 break
+                
             case .unknown:
                 break
+            @unknown default:
+                break;
             }
         }
     }

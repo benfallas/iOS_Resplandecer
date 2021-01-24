@@ -37,18 +37,14 @@ class ResplandecerWebViewController: UIViewController, WKNavigationDelegate {
         self.webView.navigationDelegate = self
         self.loadingSpinner.hidesWhenStopped = true
         self.webView.allowsBackForwardNavigationGestures = true
-
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("SUCESS")
         loadingSpinner.stopAnimating()
     }
 
     
     func webView(_ webView: WKWebView, didFailLoadWithError error: Error) {
-        print("webview did fail load with error: \(error)")
-
         loadingSpinner.stopAnimating()
 
         alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
@@ -57,14 +53,10 @@ class ResplandecerWebViewController: UIViewController, WKNavigationDelegate {
                 })
         if (alert != nil) {
             self.parent!.present(alert!, animated: false)
-
         }
-        
     }
     
     private func webView(_ webView: WKWebView, didFail navigation: WKNavigation, withError error: Error) {
-        print("webview didFailNavigationWithError with error: \(error)")
-
         loadingSpinner.stopAnimating()
 
         alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
@@ -73,13 +65,10 @@ class ResplandecerWebViewController: UIViewController, WKNavigationDelegate {
                 })
         if (alert != nil) {
             self.parent!.present(alert!, animated: false)
-
         }
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        print("webview didFailProvisionalNavigationWithError with error: \(error)")
-
         loadingSpinner.stopAnimating()
 
         alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
@@ -88,13 +77,10 @@ class ResplandecerWebViewController: UIViewController, WKNavigationDelegate {
                 })
         if (alert != nil) {
             self.parent!.present(alert!, animated: false)
-
         }
     }
     
     private func webView(_ webView: WKWebView, didFail: WKNavigation!, withError: Error) {
-        print("webview didFail with error: ")
-
         loadingSpinner.stopAnimating()
 
         alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
@@ -103,8 +89,6 @@ class ResplandecerWebViewController: UIViewController, WKNavigationDelegate {
                 })
         if (alert != nil) {
             self.parent!.present(alert!, animated: false)
-
         }
     }
-
 }

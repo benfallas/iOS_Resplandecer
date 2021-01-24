@@ -41,26 +41,17 @@ class VDEEBilingueTableViewCell: UITableViewCell {
                     self.parentViewController!.present(alert!, animated: true)
                 }
             } else {
-                print("iddn't work")
             }
         }
     }
     
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
     
     override func observeValue(forKeyPath keyPath: String?,
                                of object: Any?,
@@ -84,17 +75,16 @@ class VDEEBilingueTableViewCell: UITableViewCell {
                 status = .unknown
             }
 
-            // Switch over status value
             switch status {
+            
             case .readyToPlay:
-                print("READY TO PLAY")
                 playPauseButton.setTitle(pauseText, for: .normal)
 
                 if (alert != nil) {
                     alert!.dismiss(animated: true)
                 }
                 break
-                // Player item is ready to play.
+                
             case .failed:
                 playPauseButton.setTitle(playText, for: .normal)
 
@@ -112,10 +102,11 @@ class VDEEBilingueTableViewCell: UITableViewCell {
                     alert = nil
                 }
                 break
-                // Player item failed. See error.
+                
             case .unknown:
                 break
-                // Player item is not yet ready.
+            @unknown default:
+                break;
             }
         }
     }

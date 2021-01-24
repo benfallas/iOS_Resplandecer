@@ -29,15 +29,9 @@ class MainTableViewCell: UITableViewCell {
         super.awakeFromNib()
         titleViewCell.numberOfLines = 0
         contentViewCell.numberOfLines = 0
-        
-        // 3. add action to myView
-        let gesture = UITapGestureRecognizer(target: self, action: "viewTapped")
-        // or for swift 2 +
-        addGestureRecognizer(gesture)
     }
     
     @IBAction func onMainTableCellClicked(_ sender: Any) {
-        print("clicked")
         if !radioStation.isEmpty {
             if (AvPlayerManager.manager.isPlaying()) {
                 AvPlayerManager.manager.pause()
@@ -55,7 +49,6 @@ class MainTableViewCell: UITableViewCell {
                         self.parentViewController!.present(alert!, animated: true)
                     }
                 } else {
-                    print("iddn't work")
                 }
             }
         }
@@ -97,14 +90,11 @@ class MainTableViewCell: UITableViewCell {
                 contentViewCell.text = pressToPlayText
                 if (alert != nil) {
                     alert!.dismiss(animated: true) { () -> Void in
-
                         self.alert = UIAlertController(title: nil, message: self.errorMessage, preferredStyle: .alert)
                         self.alert!.addAction(UIAlertAction(title: "Aceptar", style: .default) { (action:UIAlertAction!) in
                             self.alert?.dismiss(animated: false)
                                 })
-                        
                         self.parentViewController!.present(self.alert!, animated: false)
-
                     }
                     alert = nil
                 }
@@ -112,6 +102,8 @@ class MainTableViewCell: UITableViewCell {
                 break
             case .unknown:
                 break
+            @unknown default:
+                break;
             }
         }
     }

@@ -40,7 +40,6 @@ class HimnarioTableViewCell: UITableViewCell {
                     self.parentViewController!.present(alert!, animated: true)
                 }
             } else {
-                print("iddn't work")
             }
         }
     }
@@ -84,13 +83,11 @@ class HimnarioTableViewCell: UITableViewCell {
             // Switch over status value
             switch status {
             case .readyToPlay:
-                print("READY TO PLAY")
                 playPauseButton.setTitle(pauseText, for: .normal)
 
                 if (alert != nil) {
                     alert!.dismiss(animated: true)
                 }
-                
                 break
                 // Player item is ready to play.
             case .failed:
@@ -103,15 +100,15 @@ class HimnarioTableViewCell: UITableViewCell {
                         self.alert!.addAction(UIAlertAction(title: "Aceptar", style: .default) { (action:UIAlertAction!) in
                             self.alert?.dismiss(animated: false)
                                 })
-                        
                         self.parentViewController!.present(self.alert!, animated: false)
-
                     }
                     alert = nil
                 }
                 break
             case .unknown:
                 break
+            @unknown default:
+                break;
             }
         }
     }
@@ -119,5 +116,4 @@ class HimnarioTableViewCell: UITableViewCell {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
 }

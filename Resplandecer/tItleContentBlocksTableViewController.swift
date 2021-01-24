@@ -49,7 +49,6 @@ class tItlecContentBlocksTableViewController: UITableViewController {
                 guard let data = data else { return }
                 let csvData = String(data: data, encoding: .utf8)!
                 let parsedCSV: [String] = csvData.components(separatedBy: ",")
-                print(parsedCSV)
                 for i in 3..<parsedCSV.count  {
                     var title = ""
                     var context = ""

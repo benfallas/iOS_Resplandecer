@@ -25,7 +25,6 @@
 		DACD854E25B7C3ED000807A3 /* HimnarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD854325B7C3EC000807A3 /* HimnarioTableViewController.swift */; };
 		DACD854F25B7C3ED000807A3 /* DeclaracionAlDiaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD854525B7C3ED000807A3 /* DeclaracionAlDiaTableViewController.swift */; };
 		DACD855025B7C3ED000807A3 /* DeclaracionAlDiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD854625B7C3ED000807A3 /* DeclaracionAlDiaTableViewCell.swift */; };
-		DACD855325B7C436000807A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD855225B7C436000807A3 /* ViewController.swift */; };
 		DACD855625B7C50B000807A3 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD855525B7C50B000807A3 /* MainTableViewCell.swift */; };
 		DACD855925B7C516000807A3 /* tItleContentBlocksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD855825B7C516000807A3 /* tItleContentBlocksTableViewController.swift */; };
 		DACD855C25B7C51D000807A3 /* AvPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD855B25B7C51C000807A3 /* AvPlayerManager.swift */; };
@@ -55,7 +54,6 @@
 		DACD854325B7C3EC000807A3 /* HimnarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HimnarioTableViewController.swift; sourceTree = "<group>"; };
 		DACD854525B7C3ED000807A3 /* DeclaracionAlDiaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclaracionAlDiaTableViewController.swift; sourceTree = "<group>"; };
 		DACD854625B7C3ED000807A3 /* DeclaracionAlDiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclaracionAlDiaTableViewCell.swift; sourceTree = "<group>"; };
-		DACD855225B7C436000807A3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DACD855525B7C50B000807A3 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		DACD855825B7C516000807A3 /* tItleContentBlocksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tItleContentBlocksTableViewController.swift; sourceTree = "<group>"; };
 		DACD855B25B7C51C000807A3 /* AvPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvPlayerManager.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				DACD855B25B7C51C000807A3 /* AvPlayerManager.swift */,
 				DACD855825B7C516000807A3 /* tItleContentBlocksTableViewController.swift */,
 				DACD855525B7C50B000807A3 /* MainTableViewCell.swift */,
-				DACD855225B7C436000807A3 /* ViewController.swift */,
 				DACD854425B7C3ED000807A3 /* DeclaracionAlDia */,
 				DACD854125B7C3EC000807A3 /* Himnario */,
 				DACD853C25B7C3E8000807A3 /* ResplandecerWeb */,
@@ -343,7 +340,6 @@
 				DACD854D25B7C3ED000807A3 /* HimnarioTableViewCell.swift in Sources */,
 				DACD854B25B7C3ED000807A3 /* VQCEEDTableViewController.swift in Sources */,
 				DACD854E25B7C3ED000807A3 /* HimnarioTableViewController.swift in Sources */,
-				DACD855325B7C436000807A3 /* ViewController.swift in Sources */,
 				DACD854A25B7C3ED000807A3 /* ResplandecerWebViewController.swift in Sources */,
 				DACD854C25B7C3ED000807A3 /* VQCEEDTableViewCell.swift in Sources */,
 				DACD855C25B7C51D000807A3 /* AvPlayerManager.swift in Sources */,
