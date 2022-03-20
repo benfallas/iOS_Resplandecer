@@ -32,7 +32,7 @@ class HimnarioTableViewCell: UITableViewCell {
             if let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
                let newURL = URL(string: encoded) {
                 
-                AvPlayerManager.manager.loadMp3File(observer: self, url: newURL)
+                AvPlayerManager.manager.loadMp3File(observer: self, url: newURL, title: titleLabel.text!, subtitle: "Pastor E. Valverde Sr")
                 AvPlayerManager.manager.play()
                 
                 alert = UIAlertController(title: nil, message: loadingMessage, preferredStyle: .alert)

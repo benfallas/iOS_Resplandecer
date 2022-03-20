@@ -29,8 +29,35 @@ class MainTableViewCell: UITableViewCell {
         super.awakeFromNib()
         titleViewCell.numberOfLines = 0
         contentViewCell.numberOfLines = 0
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleInterruption),
+                                               name: AVAudioSession.interruptionNotification,
+                                               object: AVAudioSession.sharedInstance())
     }
     
+    @objc func handleInterruption(_ notification: Notification) {
+        guard let info = notification.userInfo,
+                let typeValue = info[AVAudioSessionInterruptionTypeKey] as? UInt,
+                let type = AVAudioSession.InterruptionType(rawValue: typeValue) else {
+                    return
+            }
+            if type == .began {
+                // Interruption began, take appropriate actions (save state, update user interface)
+                AvPlayerManager.manager.pause()
+            }
+            else if type == .ended {
+                guard let optionsValue =
+                        notification.userInfo?[AVAudioSessionInterruptionOptionKey] as? UInt else {
+                        return
+                }
+                let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
+                if options.contains(.shouldResume) {
+                    onMainTableCellClicked("")
+                }
+            }
+        }
+
     @IBAction func onMainTableCellClicked(_ sender: Any) {
         if !radioStation.isEmpty {
             if (AvPlayerManager.manager.isPlaying()) {
@@ -41,7 +68,7 @@ class MainTableViewCell: UITableViewCell {
                 if let encoded = radioStation.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
                    let newURL = URL(string: encoded) {
                     
-                    AvPlayerManager.manager.loadMp3File(observer: self, url: newURL)
+                    AvPlayerManager.manager.loadMp3File(observer: self, url: newURL, title: "Radio Resplandecer", subtitle: "Sintonizando")
                     AvPlayerManager.manager.play()
                     
                     alert = UIAlertController(title: nil, message: loadingMessage, preferredStyle: .alert)
