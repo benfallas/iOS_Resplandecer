@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rn5-XM-BKx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rn5-XM-BKx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,19 +37,19 @@
                             </constraints>
                         </view>
                         <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="LmS-Jf-ydd">
-                            <rect key="frame" x="0.0" y="527" width="414" height="133"/>
+                            <rect key="frame" x="0.0" y="538" width="414" height="133"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="mainTableViewCell" rowHeight="140" id="XuM-hb-lbJ" customClass="MainTableViewCell" customModule="Resplandecer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="359" width="414" height="140"/>
+                                <rect key="frame" x="0.0" y="375.5" width="414" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XuM-hb-lbJ" id="eRj-Ss-2MR">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Sc-Q7-l17" customClass="RatingControl">
-                                            <rect key="frame" x="101" y="0.0" width="206" height="140"/>
+                                            <rect key="frame" x="101" y="0.0" width="206" height="130"/>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qn6-6q-Zc6">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
@@ -60,8 +60,8 @@
                                                 <action selector="onMainTableCellClicked:" destination="XuM-hb-lbJ" eventType="touchUpInside" id="Zp3-tV-NRB"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGV-xJ-0VX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quienes Somos?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGV-xJ-0VX">
+                                            <rect key="frame" x="10" y="0.0" width="394" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="RQg-dG-9S8"/>
                                             </constraints>
@@ -69,11 +69,9 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCL-RZ-Pup">
-                                            <rect key="frame" x="0.0" y="70" width="414" height="70"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="70" id="PTP-tE-jms"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCL-RZ-Pup">
+                                            <rect key="frame" x="10" y="80" width="394" height="50"/>
+                                            <string key="text">Hola! Nosotros somos radio Resplandecer. Nos puede localizar nuestra aplicacion en apple store. Tambien tenemos una pagina de Interener. Nustro numero de telefono para contacto es 832 3939 83</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -82,15 +80,17 @@
                                     <constraints>
                                         <constraint firstItem="4Sc-Q7-l17" firstAttribute="top" secondItem="qn6-6q-Zc6" secondAttribute="top" id="3PT-QN-2DR"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="4Sc-Q7-l17" secondAttribute="trailing" constant="87" id="4w9-x4-qGZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="UCL-RZ-Pup" secondAttribute="trailing" constant="10" id="7s2-zJ-KRJ"/>
                                         <constraint firstAttribute="trailing" secondItem="IGV-xJ-0VX" secondAttribute="trailing" id="F8F-Xp-8U9"/>
                                         <constraint firstItem="IGV-xJ-0VX" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leading" id="Gfw-wt-E1A"/>
-                                        <constraint firstAttribute="trailing" secondItem="UCL-RZ-Pup" secondAttribute="trailing" id="IMQ-dm-aMy"/>
+                                        <constraint firstAttribute="bottom" secondItem="UCL-RZ-Pup" secondAttribute="bottom" constant="10" id="JTP-d4-fdf"/>
                                         <constraint firstAttribute="trailing" secondItem="qn6-6q-Zc6" secondAttribute="trailing" id="On6-9r-EZD"/>
                                         <constraint firstItem="4Sc-Q7-l17" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leadingMargin" constant="81" id="UUB-64-Rxg"/>
-                                        <constraint firstItem="UCL-RZ-Pup" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leading" id="Wri-Xk-IEQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="qn6-6q-Zc6" secondAttribute="bottom" id="YUV-Lr-Bb9"/>
                                         <constraint firstItem="IGV-xJ-0VX" firstAttribute="top" secondItem="eRj-Ss-2MR" secondAttribute="top" id="aYg-wd-8Qn"/>
-                                        <constraint firstAttribute="bottom" secondItem="UCL-RZ-Pup" secondAttribute="bottom" id="ldL-76-27X"/>
+                                        <constraint firstItem="UCL-RZ-Pup" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leading" constant="10" id="ccU-um-lDc"/>
+                                        <constraint firstItem="UCL-RZ-Pup" firstAttribute="top" secondItem="IGV-xJ-0VX" secondAttribute="bottom" constant="10" id="dND-T4-lCx"/>
+                                        <constraint firstItem="IGV-xJ-0VX" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leading" constant="10" id="gXg-ho-hFy"/>
+                                        <constraint firstAttribute="trailing" secondItem="IGV-xJ-0VX" secondAttribute="trailing" constant="10" id="qLO-DB-XII"/>
                                         <constraint firstItem="4Sc-Q7-l17" firstAttribute="bottom" secondItem="UCL-RZ-Pup" secondAttribute="bottom" id="tZf-zz-O6N"/>
                                         <constraint firstItem="qn6-6q-Zc6" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leading" id="wDJ-od-NT1"/>
                                         <constraint firstItem="qn6-6q-Zc6" firstAttribute="top" secondItem="eRj-Ss-2MR" secondAttribute="top" id="zj7-fa-Uk9"/>
@@ -129,7 +129,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="declaracionAlDiaTableViewCell" rowHeight="142" id="Kra-gg-vJ6" customClass="DeclaracionAlDiaTableViewCell" customModule="Resplandecer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="142"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="142"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kra-gg-vJ6" id="JXR-Ga-u8k">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
@@ -323,7 +323,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="himnarioTableViewCellIdentifier" rowHeight="80" id="1V4-6d-VDu" customClass="HimnarioTableViewCell" customModule="Resplandecer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="341" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="357.5" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1V4-6d-VDu" id="iQW-yi-AMw">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -496,7 +496,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VDEEBilingueTableViewCellIdentifier" rowHeight="84" id="Ldi-7Z-52R" userLabel="VDEEBilingueTableViewCellIdentifier" customClass="VDEEBilingueTableViewCell" customModule="Resplandecer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="84"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ldi-7Z-52R" id="Uka-Bm-csu">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
@@ -734,8 +734,8 @@ Tel. 831 386-9112</string>
     </scenes>
     <resources>
         <image name="bannerLogo" width="448.5" height="232"/>
-        <image name="book" catalog="system" width="128" height="102"/>
-        <image name="book.fill" catalog="system" width="128" height="102"/>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="doc.richtext" catalog="system" width="115" height="128"/>
         <image name="doc.richtext.fill" catalog="system" width="115" height="128"/>
         <image name="doc.richtext.fill.ar" catalog="system" width="115" height="128"/>
@@ -746,7 +746,7 @@ Tel. 831 386-9112</string>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <image name="speaker.wave.1.fill" catalog="system" width="128" height="108"/>
         <image name="speaker.wave.3" catalog="system" width="128" height="86"/>
-        <image name="valverde" width="630" height="843"/>
+        <image name="valverde" width="315" height="421.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
