@@ -14,6 +14,7 @@ class MainTableViewCell: UITableViewCell {
     
     @IBOutlet var mainCellContentView: UIView!
     @IBOutlet var titleViewCell: UILabel!
+    @IBOutlet weak var playButton: UIButton!
     @IBOutlet var contentViewCell: UILabel!
     
     private var pressToPlayText: String = "Precione Para Escuchar"

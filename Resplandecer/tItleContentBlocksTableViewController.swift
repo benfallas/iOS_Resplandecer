@@ -99,18 +99,19 @@ class tItlecContentBlocksTableViewController: UITableViewController {
        
         let contentData = titleAndContents[indexPath.row]
         
+        
         if (contentData.title == "ESTACION PRINCIPAL") {
-            cell.backgroundColor = UIColor .systemRed
-            cell.contentViewCell.text = pressToPlayText
             cell.radioStation = contentData.content
-            cell.titleViewCell.text = "Radio Resplandecer"
-
+            cell.playButton.isHidden = false
             cell.contentViewCell.textAlignment = .center
             cell.contentViewCell.layoutIfNeeded()
+            cell.contentViewCell.isHidden = true
+            cell.titleViewCell.isHidden = true
         } else {
             cell.titleViewCell.text = contentData.title
             cell.contentViewCell.text = contentData.content
-
+            cell.playButton.isHidden = true
+        
         }
 
         return cell

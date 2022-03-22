@@ -51,28 +51,31 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Sc-Q7-l17" customClass="RatingControl">
                                             <rect key="frame" x="101" y="0.0" width="206" height="130"/>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qn6-6q-Zc6">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qn6-6q-Zc6">
+                                            <rect key="frame" x="130" y="0.0" width="143" height="130"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="140" id="FCT-Ok-y6B"/>
+                                                <constraint firstAttribute="height" constant="121" id="09q-41-aWP"/>
                                             </constraints>
+                                            <state key="normal" image="play-button-transparent-background">
+                                                <color key="titleShadowColor" systemColor="tertiarySystemFillColor"/>
+                                            </state>
                                             <connections>
                                                 <action selector="onMainTableCellClicked:" destination="XuM-hb-lbJ" eventType="touchUpInside" id="Zp3-tV-NRB"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quienes Somos?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGV-xJ-0VX">
-                                            <rect key="frame" x="10" y="0.0" width="394" height="70"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="70" id="RQg-dG-9S8"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCL-RZ-Pup">
                                             <rect key="frame" x="10" y="80" width="394" height="50"/>
                                             <string key="text">Hola! Nosotros somos radio Resplandecer. Nos puede localizar nuestra aplicacion en apple store. Tambien tenemos una pagina de Interener. Nustro numero de telefono para contacto es 832 3939 83</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quienes Somos?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGV-xJ-0VX">
+                                            <rect key="frame" x="20" y="11" width="394" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="RQg-dG-9S8"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -81,24 +84,26 @@
                                         <constraint firstItem="4Sc-Q7-l17" firstAttribute="top" secondItem="qn6-6q-Zc6" secondAttribute="top" id="3PT-QN-2DR"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="4Sc-Q7-l17" secondAttribute="trailing" constant="87" id="4w9-x4-qGZ"/>
                                         <constraint firstAttribute="trailing" secondItem="UCL-RZ-Pup" secondAttribute="trailing" constant="10" id="7s2-zJ-KRJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="qn6-6q-Zc6" secondAttribute="bottom" constant="10" id="Aok-tZ-4rI"/>
                                         <constraint firstAttribute="trailing" secondItem="IGV-xJ-0VX" secondAttribute="trailing" id="F8F-Xp-8U9"/>
-                                        <constraint firstItem="IGV-xJ-0VX" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leading" id="Gfw-wt-E1A"/>
                                         <constraint firstAttribute="bottom" secondItem="UCL-RZ-Pup" secondAttribute="bottom" constant="10" id="JTP-d4-fdf"/>
-                                        <constraint firstAttribute="trailing" secondItem="qn6-6q-Zc6" secondAttribute="trailing" id="On6-9r-EZD"/>
+                                        <constraint firstItem="qn6-6q-Zc6" firstAttribute="top" secondItem="eRj-Ss-2MR" secondAttribute="top" constant="10" id="KTg-Ar-awr"/>
                                         <constraint firstItem="4Sc-Q7-l17" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leadingMargin" constant="81" id="UUB-64-Rxg"/>
                                         <constraint firstItem="IGV-xJ-0VX" firstAttribute="top" secondItem="eRj-Ss-2MR" secondAttribute="top" id="aYg-wd-8Qn"/>
                                         <constraint firstItem="UCL-RZ-Pup" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leading" constant="10" id="ccU-um-lDc"/>
                                         <constraint firstItem="UCL-RZ-Pup" firstAttribute="top" secondItem="IGV-xJ-0VX" secondAttribute="bottom" constant="10" id="dND-T4-lCx"/>
                                         <constraint firstItem="IGV-xJ-0VX" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leading" constant="10" id="gXg-ho-hFy"/>
+                                        <constraint firstAttribute="trailing" secondItem="qn6-6q-Zc6" secondAttribute="trailing" constant="141" id="iaM-r5-egj"/>
                                         <constraint firstAttribute="trailing" secondItem="IGV-xJ-0VX" secondAttribute="trailing" constant="10" id="qLO-DB-XII"/>
                                         <constraint firstItem="4Sc-Q7-l17" firstAttribute="bottom" secondItem="UCL-RZ-Pup" secondAttribute="bottom" id="tZf-zz-O6N"/>
-                                        <constraint firstItem="qn6-6q-Zc6" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leading" id="wDJ-od-NT1"/>
+                                        <constraint firstItem="qn6-6q-Zc6" firstAttribute="leading" secondItem="eRj-Ss-2MR" secondAttribute="leading" constant="130" id="zY4-eM-Ae2"/>
                                         <constraint firstItem="qn6-6q-Zc6" firstAttribute="top" secondItem="eRj-Ss-2MR" secondAttribute="top" id="zj7-fa-Uk9"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="contentViewCell" destination="UCL-RZ-Pup" id="DoS-2o-GvJ"/>
                                     <outlet property="mainCellContentView" destination="eRj-Ss-2MR" id="Spi-zH-OLr"/>
+                                    <outlet property="playButton" destination="qn6-6q-Zc6" id="O9E-q5-4Zk"/>
                                     <outlet property="titleViewCell" destination="IGV-xJ-0VX" id="goy-zX-hQQ"/>
                                 </connections>
                             </tableViewCell>
@@ -117,7 +122,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hr-0R-p67" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3287" y="-1029"/>
+            <point key="canvasLocation" x="-3288.4057971014495" y="-1029.2410714285713"/>
         </scene>
         <!--Declaracion Al Dia-->
         <scene sceneID="fQc-Ek-FUd">
@@ -744,11 +749,15 @@ Tel. 831 386-9112</string>
         <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
+        <image name="play-button-transparent-background" width="626" height="626"/>
         <image name="speaker.wave.1.fill" catalog="system" width="128" height="108"/>
         <image name="speaker.wave.3" catalog="system" width="128" height="86"/>
         <image name="valverde" width="315" height="421.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemFillColor">
+            <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
